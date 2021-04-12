@@ -1,0 +1,56 @@
+// table of contents
+// 1. default stats
+// 2. variables
+// 3. mixins
+// 4. class definers
+// 5. animation
+
+// 1. default stats
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+// 2. variables
+
+$primary-color: black;
+$secondary-color: white;
+$tertiary-color: green;
+$base-font-size: 10px;
+$golden-ratio: 1.618;
+
+// 3. mixins
+
+@mixin default-spacing() {
+    padding: .2em;
+    margin: .2em;
+}
+@mixin font-size($number) {
+    font-size: $base-font-size * $golden-ratio * $number;
+}
+
+// 4. class definers
+
+.exapansion-list {
+
+}
+
+.expansion {
+}
+.expansion-header {
+    @include font-size(2);
+    width: min-content;
+    cursor: pointer;
+    text-align: center;
+}
+.card-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.card {
+    border: solid .1em $tertiary-color;
+    @include default-spacing();
+    @include font-size(1);
+}

@@ -11,9 +11,9 @@ export default function Card({card, visibility}) {
                 display: visibility ? "flex" : "none",
             }}
         >
-            <div>
+            <h3 className="card-name">
                 {card.name}
-            </div>
+            </h3>
             <CardDescription card={card} visibility={visibility} visibility2={descriptionVisibility}/>
         </li>
     )

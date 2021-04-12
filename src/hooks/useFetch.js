@@ -3,13 +3,7 @@ import { useState, useEffect } from "react";
 
 function useFetch(url) {
 
-    const expansionMinimum = 50;
-    const invalidExpansions = [
-        "Hero Skins",
-        "Credits",
-        "Tavern Brawl",
-        "Battlegrounds",
-    ];
+    
     // data varibale
     const [data, setData] = useState([]);
     const getData = async (url) => {
@@ -31,11 +25,7 @@ function useFetch(url) {
                 }
             })
             // filter the array
-            const filteredArray = await array.filter(expansion => {
-                if (expansion.cards.length < expansionMinimum) return false;
-                if (invalidExpansions.includes(expansion.name)) return false;
-                return true
-            })
+            const filteredArray = await filterByExpansion(array);
             console.log(filteredArray);
             // set data varibale to converted response
             setData(filteredArray);
@@ -48,5 +38,19 @@ function useFetch(url) {
       getData(url)
     }, [])
     return [data];
+}
+const filterByExpansion = (data) => {
+    const expansionMinimum = 50;
+    const invalidExpansions = [
+        "Hero Skins",
+        "Credits",
+        "Tavern Brawl",
+        "Battlegrounds",
+    ];
+    return data.filter(expansion => {
+        if (expansion.cards.length < expansionMinimum) return false;
+        if (invalidExpansions.includes(expansion.name)) return false;
+        return true
+    })
 }
 export default useFetch;

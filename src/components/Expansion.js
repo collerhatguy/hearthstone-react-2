@@ -10,8 +10,8 @@ export default function Expansion({expansion}) {
                 {expansion.name}
             </h2>
             <ul className="card-list">
-                {expansion.cards.map((card, index) => {
-                    return <Card card={card} key={index} visibility={visibility}/>
+                {expansion.cards.map(card => {
+                    return <Card card={card} visibility={visibility} key={card.cardId}/>
                 })}
             </ul>
         </div>

@@ -14,7 +14,7 @@ export default function Card({card, visibility}) {
             <h3 className="card-name">
                 {card.name}
             </h3>
-            <CardDescription card={card} visibility={visibility} visibility2={descriptionVisibility}/>
+            <CardDescription card={card} visibility={visibility} visibility2={descriptionVisibility} key={card.dbfId}/>
         </li>
     )
 }

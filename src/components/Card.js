@@ -6,7 +6,7 @@ export default function Card({card, visibility}) {
     return (
         <li 
             onClick={() => setDescriptionVisibility(!descriptionVisibility)}
-            className="card" 
+            className={`card ${card.playerClass}`} 
             style={{
                 display: visibility ? "flex" : "none",
             }}

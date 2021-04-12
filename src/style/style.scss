@@ -20,6 +20,7 @@ $secondary-color: white;
 $tertiary-color: green;
 $base-font-size: 10px;
 $golden-ratio: 1.618;
+@import "./card-colors";
 
 // 3. mixins
 
@@ -64,7 +65,6 @@ $golden-ratio: 1.618;
     margin: .2em auto;
     text-decoration: underline;
     cursor: pointer;
-    
 }
 .card-list {
     display: flex;

@@ -4,6 +4,48 @@
   text-align: center;
 }
 
+.Hunter {
+  background-color: #467c02;
+}
+
+.Mage {
+  background-color: #9ac7dc;
+}
+
+.Paladin {
+  background-color: #c5891b;
+}
+
+.Priest {
+  color: black;
+  background-color: #dedede;
+}
+
+.Rogue {
+  color: whitesmoke;
+  background-color: #232323;
+}
+
+.Shaman {
+  background-color: #1d47aa;
+}
+
+.Warrior {
+  background-color: #6d0d18;
+}
+
+.Warlock {
+  background-color: #3a1058;
+}
+
+.Druid {
+  background-color: #6b2e10;
+}
+
+.Demon-Hunter {
+  background-color: #005d30;
+}
+
 .expansion-list {
   width: 100vw;
   display: -webkit-box;

@@ -31,6 +31,19 @@ $golden-ratio: 1.618;
     font-size: $base-font-size * $golden-ratio * $number;
 }
 
+@mixin hover-outline() {
+    transition-duration: 300ms;
+    &:hover {
+        color: $secondary-color;
+        background-color: $primary-color;
+    }
+    &:focus {
+        outline: none;
+        color: $secondary-color;
+        background-color: $primary-color;
+    }
+}
+
 // 4. class definers
 
 .expansion-list {
@@ -45,21 +58,13 @@ $golden-ratio: 1.618;
 .expansion-header {
     @include font-size(2);
     @include default-spacing();
+    @include hover-outline();
     border: solid .1em $tertiary-color;
     width: min-content;
     margin: .2em auto;
     text-decoration: underline;
     cursor: pointer;
-    transition-duration: 300ms;
-    &:hover {
-        color: $secondary-color;
-        background-color: $primary-color;
-    }
-    &:focus {
-        outline: none;
-        color: $secondary-color;
-        background-color: $primary-color;
-    }
+    
 }
 .card-list {
     display: flex;
@@ -69,7 +74,9 @@ $golden-ratio: 1.618;
     width: 90vw;
 }
 .card {
-    border: solid .1em $tertiary-color;
     @include default-spacing();
     @include font-size(1);
+    @include hover-outline();
+    border: solid .1em $tertiary-color;
+    cursor: pointer;
 }

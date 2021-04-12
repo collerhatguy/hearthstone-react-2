@@ -25,6 +25,8 @@
   font-size: 32.36px;
   padding: .2em;
   margin: .2em;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
   border: solid 0.1em green;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -32,8 +34,6 @@
   margin: .2em auto;
   text-decoration: underline;
   cursor: pointer;
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
 }
 
 .expansion-header:hover {
@@ -63,9 +63,23 @@
 }
 
 .card {
-  border: solid 0.1em green;
   padding: .2em;
   margin: .2em;
   font-size: 16.18px;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  border: solid 0.1em green;
+  cursor: pointer;
+}
+
+.card:hover {
+  color: white;
+  background-color: black;
+}
+
+.card:focus {
+  outline: none;
+  color: white;
+  background-color: black;
 }
 /*# sourceMappingURL=style.css.map */

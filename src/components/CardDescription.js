@@ -7,8 +7,8 @@ export default function CardDescription({card, visibility, visibility2}) {
     return (
         <div 
             style={{
-                display: visibility2 ? "block" : "hidden",
-                display: visibility ? "block" : "hidden",
+                display: visibility ? "flex" : "none",
+                display: visibility2 ? "flex" : "none",
             }}
             className="card-description">
             {properties.map(property => {

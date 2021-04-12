@@ -83,5 +83,8 @@ $golden-ratio: 1.618;
     cursor: pointer;
 }
 .card-name {
-    display: block;
+}
+.card-description {
+    display: flex;
+    flex-direction: column;
 }

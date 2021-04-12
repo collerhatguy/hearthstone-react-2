@@ -1,15 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CardDescription from "./CardDescription";
 
 export default function Card({card, visibility}) {
-    console.log(card);
+    const [descriptionVisibility, setDescriptionVisibility] = useState(visibility);
     return (
-        <li className="card" 
-        style={{
-            display: visibility ? "flex" : "none",
-        }}>
-            {card.name}
-            <CardDescription card={card}/>
+        <li 
+            onClick={() => setDescriptionVisibility(!descriptionVisibility)}
+            className="card" 
+            style={{
+                display: visibility ? "flex" : "none",
+            }}
+        >
+            <div>
+                {card.name}
+            </div>
+            <CardDescription card={card} visibility={visibility} visibility2={descriptionVisibility}/>
         </li>
     )
 }

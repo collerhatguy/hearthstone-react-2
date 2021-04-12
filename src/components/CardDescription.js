@@ -3,7 +3,6 @@ import useCardDescription from "../hooks/useCardDescription";
 
 export default function CardDescription({card, visibility, visibility2}) {
     const properties = useCardDescription(card)
-    console.log(card)
     return (
         <div 
             style={{

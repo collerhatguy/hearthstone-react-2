@@ -18,12 +18,7 @@ function useFetch(url) {
             // converting data into js object
             const json = await response.json();
             // convert object into array
-            const array = await Object.keys(json).map(expansionName => {
-                return {
-                    name: expansionName,
-                    cards: json[expansionName],
-                }
-            })
+            const array = await convertToArray(json);
             // filter the array
             const filteredArray = await filterByExpansion(array);
             console.log(filteredArray);
@@ -39,6 +34,14 @@ function useFetch(url) {
     }, [])
     return [data];
 }
+const convertToArray = (data) => {
+    return Object.keys(data).map(expansionName => {
+        return {
+            name: expansionName,
+            cards: data[expansionName],
+        }
+    })
+}
 const filterByExpansion = (data) => {
     const expansionMinimum = 50;
     const invalidExpansions = [
@@ -47,10 +50,14 @@ const filterByExpansion = (data) => {
         "Tavern Brawl",
         "Battlegrounds",
     ];
+    // return expnsions thata re long enough and not invalid
     return data.filter(expansion => {
         if (expansion.cards.length < expansionMinimum) return false;
         if (invalidExpansions.includes(expansion.name)) return false;
         return true
     })
+}
+const filterByCard = (data) => {
+
 }
 export default useFetch;

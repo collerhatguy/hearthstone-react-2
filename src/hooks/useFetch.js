@@ -21,9 +21,10 @@ function useFetch(url) {
             const array = await convertToArray(json);
             // filter the array
             const filteredArray = await filterByExpansion(array);
-            console.log(filteredArray);
+            // again by card
+            const filteredTwiceArray = await filterByCard(filteredArray);
             // set data varibale to converted response
-            setData(filteredArray);
+            setData(filteredTwiceArray);
         } catch (err) {
             console.log(err);   
         }
@@ -58,6 +59,18 @@ const filterByExpansion = (data) => {
     })
 }
 const filterByCard = (data) => {
+    const invalidCardTypes = ["Hero Power", "Hero", "Enchantment"];
+    const invalidCardNames = ["FX", "Cost", "NOOOOOOOOOOOO", "AFK", "Coin's Vengeance", "Anomaly"];
 
+    return data.map(expansion => {
+        return {
+            ...expansion,
+            cards: expansion.cards.filter(card => {
+                if (invalidCardNames.includes(card.name)) return false;
+                if (invalidCardTypes.includes(card.type)) return false;
+                return true;
+            })
+        }
+    })
 }
 export default useFetch;

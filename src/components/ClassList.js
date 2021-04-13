@@ -21,9 +21,10 @@ export default function ClassList({playerClass, cards, classVisibility}) {
             <ul className="card-list">
                 {classCards.map((card, index) => {
                     return <Card 
-                        card={card} 
-                        cardVisibility={cardVisibility} 
-                        key={index} />
+                                card={card} 
+                                cardVisibility={cardVisibility} 
+                                key={index} 
+                            />
                 })}
             </ul>
         </div>

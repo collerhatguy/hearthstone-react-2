@@ -80,8 +80,14 @@
           flex-direction: column;
 }
 
-.expansion-header {
+h1 {
   font-size: 64.72px;
+  padding: .2em;
+  margin: .2em;
+}
+
+.expansion-header {
+  font-size: 48.54px;
   padding: .2em;
   margin: .2em;
   -webkit-transition-duration: 300ms;

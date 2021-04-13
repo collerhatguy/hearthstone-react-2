@@ -6,6 +6,7 @@ function App() {
   
   return (
     <div className="App">
+      <h1>Hearthstone Cards</h1>
       <ExpansionList />
     </div>
   );

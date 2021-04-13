@@ -6,6 +6,8 @@ function useFetch(url) {
     
     // data varibale
     const [data, setData] = useState([]);
+    // so we know when we are done loading
+    const [isDone, setIsDone] = useState(false);
     const getData = async (url) => {
         try {
             const response = await fetch(url, {
@@ -32,8 +34,10 @@ function useFetch(url) {
     // run the async function when component renders
     useEffect(() => {
       getData(url)
+      // set the isDone varibale to true after getting data
+      setIsDone(true)
     }, [])
-    return [data];
+    return [data, isDone];
 }
 const convertToArray = (data) => {
     return Object.keys(data).map(expansionName => {

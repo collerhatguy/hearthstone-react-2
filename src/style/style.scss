@@ -61,8 +61,12 @@ $golden-ratio: 1.618;
     align-items: center;
     flex-direction: column;
 }
-.expansion-header {
+h1 {
     @include font-size(4);
+    @include default-spacing();
+}
+.expansion-header {
+    @include font-size(3);
     @include default-spacing();
     @include hover-outline();
     border: solid .1em $tertiary-color;

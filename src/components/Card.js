@@ -6,7 +6,7 @@ export default function Card({card, cardVisibility}) {
     return (
         <li 
             onClick={() => setDescriptionVisibility(!descriptionVisibility)}
-            className={`card ${card.playerClass}`} 
+            className={`card ${card.playerClass.replace(" ", "-")}`} 
             style={{
                 display: cardVisibility ? "flex" : "none",
             }}
@@ -14,7 +14,11 @@ export default function Card({card, cardVisibility}) {
             <h3 className="card-name">
                 {card.name}
             </h3>
-            <CardDescription card={card} cardVisibility={cardVisibility} descriptionVisibility={descriptionVisibility} key={card.dbfId}/>
+            <CardDescription 
+                card={card} 
+                cardVisibility={cardVisibility} 
+                descriptionVisibility={descriptionVisibility}
+            />
         </li>
     )
 }

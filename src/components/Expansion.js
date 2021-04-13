@@ -13,11 +13,12 @@ export default function Expansion({expansion}) {
                 onClick={() => setClassVisibility(!classVisibility)}>
                 {expansion.name}
             </h2>
-            {cardClasses.map(playerClass => {
+            {cardClasses.map((playerClass, index) => {
                 return <ClassList 
                             playerClass={playerClass} 
                             cards={expansion.cards} 
                             classVisibility={classVisibility}
+                            key={index}
                         />
             })}
         </div>

@@ -55,15 +55,33 @@ $golden-ratio: 1.618;
     flex-direction: column;
 }
 .expansion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .expansion-header {
-    @include font-size(2);
+    @include font-size(3);
     @include default-spacing();
     @include hover-outline();
     border: solid .1em $tertiary-color;
     width: min-content;
     margin: .2em auto;
     text-decoration: underline;
+    cursor: pointer;
+}
+.class-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.player-class-header {
+    @include font-size(2);
+    @include default-spacing();
+    @include hover-outline();
+    border: solid .1em $tertiary-color;
+    width: min-content;
+    margin: .2em auto;
     cursor: pointer;
 }
 .card-list {

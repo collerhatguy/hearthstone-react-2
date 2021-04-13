@@ -28,4 +28,4 @@ export default function ClassList({playerClass, cards, classVisibility}) {
             </ul>
         </div>
     )
-}
+} 

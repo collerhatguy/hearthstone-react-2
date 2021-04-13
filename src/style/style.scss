@@ -20,7 +20,7 @@ $secondary-color: white;
 $tertiary-color: green;
 $base-font-size: 10px;
 $golden-ratio: 1.618;
-@import "./card-colors";
+@import "./_card-colors";
 
 // 3. mixins
 
@@ -55,13 +55,14 @@ $golden-ratio: 1.618;
     flex-direction: column;
 }
 .expansion {
+    width: 95vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 .expansion-header {
-    @include font-size(3);
+    @include font-size(4);
     @include default-spacing();
     @include hover-outline();
     border: solid .1em $tertiary-color;
@@ -71,26 +72,25 @@ $golden-ratio: 1.618;
     cursor: pointer;
 }
 .class-list {
+    width: 95vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 .player-class-header {
     @include font-size(2);
     @include default-spacing();
     @include hover-outline();
     border: solid .1em $tertiary-color;
-    width: min-content;
-    margin: .2em auto;
     cursor: pointer;
 }
 .card-list {
+    width: 90vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 90vw;
 }
 .card {
     @include default-spacing();

@@ -63,8 +63,25 @@
           flex-direction: column;
 }
 
+.expansion {
+  width: 95vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .expansion-header {
-  font-size: 32.36px;
+  font-size: 64.72px;
   padding: .2em;
   margin: .2em;
   -webkit-transition-duration: 300ms;
@@ -89,7 +106,8 @@
   background-color: black;
 }
 
-.card-list {
+.class-list {
+  width: 95vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,7 +119,42 @@
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.player-class-header {
+  font-size: 32.36px;
+  padding: .2em;
+  margin: .2em;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  border: solid 0.1em green;
+  cursor: pointer;
+}
+
+.player-class-header:hover {
+  color: white;
+  background-color: black;
+}
+
+.player-class-header:focus {
+  outline: none;
+  color: white;
+  background-color: black;
+}
+
+.card-list {
   width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .card {

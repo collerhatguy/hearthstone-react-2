@@ -26,6 +26,7 @@ function useFetch(url) {
             // again by card
             const filteredTwiceArray = await filterByCard(filteredArray);
             // set data varibale to converted response
+            console.log(filteredTwiceArray);
             setData(filteredTwiceArray);
         } catch (err) {
             console.log(err);   

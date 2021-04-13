@@ -16,9 +16,12 @@ export default function ClassList({playerClass, cards, classVisibility}) {
             }}>
             <h2 
                 className="player-class-header"
+                tabIndex="1"
                 onClick={() => setCardVisibility(!cardVisibility)}
             >{playerClass}</h2>
-            <ul className="card-list">
+            <ul 
+                className="card-list"
+            >
                 {classCards.map((card, index) => {
                     return <Card 
                                 card={card} 

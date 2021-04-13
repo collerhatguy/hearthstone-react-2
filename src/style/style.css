@@ -113,6 +113,8 @@ h1 {
 }
 
 .class-list {
+  padding: .2em;
+  margin: .2em;
   width: 95vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,6 +151,8 @@ h1 {
 }
 
 .card-list {
+  padding: .2em;
+  margin: .2em;
   width: 90vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -199,5 +203,23 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.card-artist, .card-flavor {
+  font-weight: 900;
+}
+
+.card-artist {
+  text-decoration: underline;
+}
+
+.card-artist {
+  -webkit-text-decoration: wavy;
+          text-decoration: wavy;
+}
+
+img {
+  width: 300px;
+  height: 400px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -6,12 +6,15 @@ export default function Card({card, cardVisibility}) {
     return (
         <li 
             onClick={() => setDescriptionVisibility(!descriptionVisibility)}
+            tabIndex="2"
             className={`card ${card.playerClass.replace(" ", "-")}`} 
             style={{
                 display: cardVisibility ? "flex" : "none",
             }}
         >
-            <h3 className="card-name">
+            <h3 
+                className="card-name"
+            >
                 {card.name}
             </h3>
             <CardDescription 

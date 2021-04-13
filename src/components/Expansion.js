@@ -10,6 +10,7 @@ export default function Expansion({expansion}) {
     return (
         <div className="expansion">
             <h2 className="expansion-header"
+                tabIndex="0"
                 onClick={() => setClassVisibility(!classVisibility)}>
                 {expansion.name}
             </h2>

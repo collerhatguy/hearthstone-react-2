@@ -76,6 +76,7 @@ h1 {
     cursor: pointer;
 }
 .class-list {
+    @include default-spacing();
     width: 95vw;
     display: flex;
     justify-content: center;
@@ -90,6 +91,7 @@ h1 {
     cursor: pointer;
 }
 .card-list {
+    @include default-spacing();
     width: 90vw;
     display: flex;
     justify-content: center;
@@ -110,4 +112,17 @@ h1 {
 .card-description {
     display: flex;
     flex-direction: column;
+}
+.card-artist, .card-flavor {
+    font-weight: 900;
+}
+.card-artist {
+    text-decoration: underline;
+}
+.card-artist {
+    text-decoration: wavy;
+}
+img {
+    width: 300px;
+    height: 400px;
 }

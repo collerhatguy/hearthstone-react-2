@@ -9,7 +9,8 @@ export default function CardDescription({card, cardVisibility, descriptionVisibi
                 display: cardVisibility ? "flex" : "none",
                 display: descriptionVisibility ? "flex" : "none",
             }}
-            className="card-description">
+            className="card-description"
+        >
             {properties.map(property => {
                 return property();
             })}

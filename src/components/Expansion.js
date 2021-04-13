@@ -1,19 +1,25 @@
-import React, {useState} from 'react'
-import Card from "./Card"
+import React, {useState} from 'react';
+import ClassList from "./ClassList";
 
 export default function Expansion({expansion}) {
-    const [visibility, setVisibility] = useState(false)
+    const [classVisibility, setClassVisibility] = useState(false)
+    
+    const cardClasses = ["Neutral", "Rogue", "Warrior",
+  "Hunter", "Mage", "Paladin", "Shaman",
+  "Priest", "Druid", "Warlock", "Demon Hunter"];
     return (
         <div className="expansion">
             <h2 className="expansion-header"
-                onClick={() => setVisibility(!visibility)}>
+                onClick={() => setClassVisibility(!classVisibility)}>
                 {expansion.name}
             </h2>
-            <ul className="card-list">
-                {expansion.cards.map(card => {
-                    return <Card card={card} visibility={visibility} key={card.cardId}/>
-                })}
-            </ul>
+            {cardClasses.map(playerClass => {
+                return <ClassList 
+                            playerClass={playerClass} 
+                            cards={expansion.cards} 
+                            classVisibility={classVisibility}
+                        />
+            })}
         </div>
     )
 }

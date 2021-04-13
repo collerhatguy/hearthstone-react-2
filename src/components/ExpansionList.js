@@ -12,6 +12,6 @@ export default function ExpansionList() {
             {data.map((expansion, index) => {
                 return <Expansion expansion={expansion} key={index} />
             })}
-        </div>
+        </div>         
     )
 }

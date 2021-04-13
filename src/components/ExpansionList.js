@@ -9,6 +9,7 @@ export default function ExpansionList() {
     const [data, isDone] = useFetch(url)
     return (
         <div className="expansion-list">
+            <h1>Hearthstone Cards</h1>
             <div 
                 style={{
                     display: isDone ? "none" : "block",

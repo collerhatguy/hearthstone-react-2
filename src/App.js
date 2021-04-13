@@ -6,10 +6,11 @@ import "./style/style.css";
 function App() {
   
   return (
-    <div className="App">
-      <h1>Hearthstone Cards</h1>
-      <ExpansionList />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={ExpansionList}/>
+      </Switch>
+    </Router>
   );
 }
 

@@ -3,6 +3,7 @@
 // 2. variables
 // 3. mixins
 // 4. class definers
+// 4.5: tags
 // 5. animation
 
 // 1. default stats
@@ -149,8 +150,19 @@ h1 {
 .card-artist {
     text-decoration: underline;
 }
-.card-artist {
-    text-decoration: wavy;
+// 4.5: tags
+
+header, nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    a {
+        @include font-size(2);
+        @include hover-outline();
+        color: $primary-color;
+        text-decoration: none;
+    }
 }
 img {
     width: 300px;

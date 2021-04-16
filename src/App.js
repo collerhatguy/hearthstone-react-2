@@ -1,14 +1,28 @@
 import React from "react";
 import ExpansionList from "./components/ExpansionList";
+import SearchPage from "./components/SearchPage";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./style/style.css";
 
 function App() {
   
   return (
-    <div className="App">
-      <h1>Hearthstone Cards</h1>
-      <ExpansionList />
-    </div>
+    <Router>
+      <header>
+        <nav>
+          <Link to="/">
+            All Expansions
+          </Link>
+          <Link to="/search-card">
+            Search Page
+          </Link>
+        </nav>
+      </header>
+      <Switch>
+        <Route path="/" exact component={ExpansionList}/>
+        <Route path="/search-card" component={SearchPage}/>
+      </Switch>
+    </Router>
   );
 }
 

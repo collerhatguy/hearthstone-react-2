@@ -427,9 +427,37 @@ h1 {
   text-decoration: underline;
 }
 
-.card-artist {
-  -webkit-text-decoration: wavy;
-          text-decoration: wavy;
+header, nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header a, nav a {
+  font-size: 32.36px;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+header a:hover, nav a:hover {
+  color: white;
+  background-color: black;
+}
+
+header a:focus, nav a:focus {
+  outline: none;
+  color: white;
+  background-color: black;
 }
 
 img {

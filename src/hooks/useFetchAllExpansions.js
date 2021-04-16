@@ -1,7 +1,7 @@
 // this is a hook that takes a url and returns data
 import { useState, useEffect } from "react";
 
-function useFetch(url) {
+function useFetchAllExpansions(url) {
 
     
     // data varibale
@@ -78,4 +78,4 @@ const filterByCard = (data) => {
         }
     })
 }
-export default useFetch;
+export default useFetchAllExpansions;

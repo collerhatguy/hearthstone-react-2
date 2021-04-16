@@ -13,6 +13,11 @@ function useFetchSearch(search) {
                 }
             })
             const data = await response.json();
+            if (data.length > 9) {
+                setSearchResponse(data.slice(0, 10));
+                console.log(data.slice(0, 10));
+                return;
+            }
             setSearchResponse(data);
             console.log(data);
         } catch(error) {

@@ -20,6 +20,7 @@ $secondary-color: white;
 $tertiary-color: green;
 $base-font-size: 10px;
 $golden-ratio: 1.618;
+$loading-dot-size: 1em;
 @import "./_card-colors";
 
 // 3. mixins
@@ -47,7 +48,31 @@ $golden-ratio: 1.618;
 }
 
 // 4. class definers
-
+.loader {
+    @include font-size(2);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading-dot {
+    width: $loading-dot-size;
+    height: $loading-dot-size;
+    background-color: $primary-color;
+    border-radius: 100%;
+    position: absolute;
+    &:nth-child(1) {
+        animation: loading 2500ms -600ms linear infinite;
+        left: -$loading-dot-size - .5em;
+    }
+    &:nth-child(2) {
+        animation: loading 2500ms -300ms linear infinite;
+    }
+    &:nth-child(3) {
+        animation: loading 2500ms linear infinite;
+        left: $loading-dot-size + .5em;;
+    }
+}
 .expansion-list {
     width: 100vw;
     display: flex;
@@ -130,4 +155,11 @@ h1 {
 img {
     width: 300px;
     height: 400px;
+}
+
+// 5. animation
+@keyframes loading {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
 }

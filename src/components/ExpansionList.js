@@ -10,10 +10,14 @@ export default function ExpansionList() {
     return (
         <div className="expansion-list">
             <div 
-                style={{
-                    display: isDone ? "none" : "block",
-                }}
-                className="loader">Loading</div>
+                style={{ display: isDone ? "none" : "block", }}
+                className="loader"
+            >
+                <div className="loading-dot"></div>
+                <div className="loading-dot"></div>
+                <div className="loading-dot"></div>
+            </div>
+            
             {data.map((expansion, index) => {
                 return <Expansion expansion={expansion} key={index} />
             })}

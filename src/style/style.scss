@@ -18,7 +18,12 @@
 
 $primary-color: black;
 $secondary-color: white;
-$tertiary-color: green;
+$tertiary-color-100: hsl(120, 100%, 5%);
+$tertiary-color-200: hsl(120, 100%, 15%);
+$tertiary-color-300: hsl(120, 100%, 25%);
+$tertiary-color-400: hsl(120, 100%, 45%);
+$tertiary-color-500: hsl(120, 100%, 65%);
+$tertiary-color-600: hsl(120, 100%, 85%);
 $base-font-size: 10px;
 $golden-ratio: 1.618;
 $loading-dot-size: 1em;
@@ -96,7 +101,7 @@ h1 {
     @include font-size(3);
     @include default-spacing();
     @include hover-outline();
-    border: solid .1em $tertiary-color;
+    border: solid .1em $tertiary-color-300;
     width: min-content;
     margin: .2em auto;
     text-decoration: underline;
@@ -121,7 +126,7 @@ h1 {
     @include default-spacing();
     @include hover-outline();
     width: min-content;
-    border: solid .1em $tertiary-color;
+    border: solid .1em $tertiary-color-300;
 }
 .card-list {
     @include default-spacing();
@@ -134,7 +139,7 @@ h1 {
 .card {
     @include default-spacing();
     @include font-size(1);
-    border: solid .1em $tertiary-color;
+    border: solid .1em $tertiary-color-300;
     display: flex;
     flex-direction: column;
 }
@@ -167,6 +172,22 @@ header, nav {
 img {
     width: 300px;
     height: 400px;
+}
+label, input {
+    @include font-size(2);
+}
+input {
+    background-color: $tertiary-color-200;
+    color: $tertiary-color-600;
+    border: $tertiary-color-600 solid 5px;
+    transition-duration: 500ms;
+    &:hover {
+        box-shadow: .1em .1em .4em $tertiary-color-200;
+    }
+    &:focus {
+        outline: none;
+        box-shadow: .1em .1em .4em $tertiary-color-200;
+    }
 }
 
 // 5. animation

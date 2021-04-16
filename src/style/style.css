@@ -465,6 +465,29 @@ img {
   height: 400px;
 }
 
+label, input {
+  font-size: 32.36px;
+}
+
+input {
+  background-color: #004d00;
+  color: #b3ffb3;
+  border: #b3ffb3 solid 5px;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+}
+
+input:hover {
+  -webkit-box-shadow: 0.1em 0.1em 0.4em #004d00;
+          box-shadow: 0.1em 0.1em 0.4em #004d00;
+}
+
+input:focus {
+  outline: none;
+  -webkit-box-shadow: 0.1em 0.1em 0.4em #004d00;
+          box-shadow: 0.1em 0.1em 0.4em #004d00;
+}
+
 @-webkit-keyframes loading {
   0% {
     opacity: 0;

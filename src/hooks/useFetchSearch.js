@@ -4,6 +4,7 @@ function useFetchSearch(search) {
     const [searchResponse, setSearchResponse] = useState([])
     const getSearch = async (search) => {
         try {
+            if (search.length === 0) return;
             const response = await fetch(`https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/search/${search}`, {
                 "method": "GET",
                 "headers": {
@@ -12,7 +13,8 @@ function useFetchSearch(search) {
                 }
             })
             const data = await response.json();
-            setSearchResponse(data)
+            setSearchResponse(data);
+            console.log(data);
         } catch(error) {
             console.log(error)
         }

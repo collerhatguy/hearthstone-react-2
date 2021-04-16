@@ -1,20 +1,23 @@
 import React, {useState} from 'react';
 import useFetchSearch from "../hooks/useFetchSearch";
+import SearchList from "../components/SearchList";
 
 export default function SearchPage() {
-    const [search, setSearch] = useState("")
-    useFetchSearch(search);
+    // our search query
+    const [search, setSearch] = useState("");
+    // our custom hook that returns our response
+    const searchResponse = useFetchSearch(search);
     return (
         <div>
             <form>
+                <label>Search For Cards:</label>
                 <input
                     type="text"
-                    onchange={e => setSearch(e.target.value)}
+                    onChange={e => setSearch(e.target.value)}
                     placeholder="search"
-                    >
-
-                    </input>
+                    ></input>
             </form>
+            <SearchList cards={searchResponse} />
         </div>
     )
 }

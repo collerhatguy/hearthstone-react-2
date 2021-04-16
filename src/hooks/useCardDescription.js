@@ -1,4 +1,4 @@
-
+import {useState} from "react";
 function useCardDescription(card) {
     // const renderHealth = () => {
     //     if (card.health) {
@@ -45,10 +45,18 @@ function useCardDescription(card) {
             return <div className="card-flavor">Flavor: {card.flavor}</div>
         }
     }   
+
+    const [gold, setGold] = useState(false)
     const renderImage = () => {
-        if (card.img) {
+        if (card.img || card.imgGold) {
             return <div className="card-image">
-                        <img src={card.img} />
+                        <img
+                            style={{ display: gold ? "none" : "block"}} 
+                            src={card.img} />
+                        <img 
+                            style={{ display: gold ? "block" : "none"}} 
+                            src={card.imgGold} />
+                        <button onClick={() => {setGold(!gold)}}>Gold</button>
                     </div>
         }
     }   

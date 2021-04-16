@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import CardDescription from "./CardDescription";
 
 export default function Card({card, cardVisibility}) {
-    const [descriptionVisibility, setDescriptionVisibility] = useState(cardVisibility);
+    const [descriptionVisibility, setDescriptionVisibility] = useState(false);
     return (
         <li 
             onClick={() => setDescriptionVisibility(!descriptionVisibility)}
@@ -17,7 +17,7 @@ export default function Card({card, cardVisibility}) {
             >
                 {card.name}
             </h3>
-            <CardDescription 
+            <CardDescription
                 card={card} 
                 cardVisibility={cardVisibility} 
                 descriptionVisibility={descriptionVisibility}

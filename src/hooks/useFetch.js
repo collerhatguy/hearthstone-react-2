@@ -28,6 +28,8 @@ function useFetch(url) {
             // set data varibale to converted response
             console.log(filteredTwiceArray);
             setData(filteredTwiceArray);
+            // set the isDone varibale to true after getting data
+            setIsDone(true)
         } catch (err) {
             console.log(err);   
         }
@@ -35,8 +37,6 @@ function useFetch(url) {
     // run the async function when component renders
     useEffect(() => {
       getData(url)
-      // set the isDone varibale to true after getting data
-      setIsDone(true)
     }, [])
     return [data, isDone];
 }

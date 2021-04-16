@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ClassList from "./ClassList";
+import ClassCards from "./ClassCards";
 
 export default function Expansion({expansion}) {
     const [classVisibility, setClassVisibility] = useState(false)
@@ -14,14 +14,17 @@ export default function Expansion({expansion}) {
                 onClick={() => setClassVisibility(!classVisibility)}>
                 {expansion.name}
             </h2>
-            {cardClasses.map((playerClass, index) => {
-                return <ClassList 
-                            playerClass={playerClass} 
-                            cards={expansion.cards} 
-                            classVisibility={classVisibility}
-                            key={index}
-                        />
-            })}
+            <div
+                className="class-list">
+                {cardClasses.map((playerClass, index) => {
+                    return <ClassCards 
+                                playerClass={playerClass} 
+                                cards={expansion.cards} 
+                                classVisibility={classVisibility}
+                                key={index}
+                            />
+                })}
+            </div>
         </div>
     )
 }

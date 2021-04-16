@@ -34,6 +34,7 @@ $golden-ratio: 1.618;
 
 @mixin hover-outline() {
     transition-duration: 300ms;
+    cursor: pointer;
     &:hover {
         color: $secondary-color;
         background-color: $primary-color;
@@ -73,22 +74,28 @@ h1 {
     width: min-content;
     margin: .2em auto;
     text-decoration: underline;
-    cursor: pointer;
 }
 .class-list {
     @include default-spacing();
     width: 95vw;
     display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.class-cards {
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 .player-class-header {
     @include font-size(2);
     @include default-spacing();
     @include hover-outline();
+    width: min-content;
     border: solid .1em $tertiary-color;
-    cursor: pointer;
 }
 .card-list {
     @include default-spacing();
@@ -101,11 +108,9 @@ h1 {
 .card {
     @include default-spacing();
     @include font-size(1);
-    @include hover-outline();
     border: solid .1em $tertiary-color;
     display: flex;
     flex-direction: column;
-    cursor: pointer;
 }
 .card-name {
 }

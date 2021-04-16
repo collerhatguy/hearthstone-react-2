@@ -4,46 +4,213 @@
   text-align: center;
 }
 
+.Neutral {
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.Neutral:hover {
+  color: white;
+  background-color: black;
+}
+
+.Neutral:focus {
+  outline: none;
+  color: white;
+  background-color: black;
+}
+
 .Hunter {
-  background-color: #467c02;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  background-color: #467e02;
+  color: #dcfeb4;
+  cursor: pointer;
+}
+
+.Hunter:hover {
+  color: #467e02;
+  background-color: #dcfeb4;
+}
+
+.Hunter:focus {
+  outline: none;
+  color: #467e02;
+  background-color: #dcfeb4;
 }
 
 .Mage {
-  background-color: #9ac7dc;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  background-color: #98c7dc;
+  color: #112731;
+  cursor: pointer;
+}
+
+.Mage:hover {
+  color: #98c7dc;
+  background-color: #112731;
+}
+
+.Mage:focus {
+  outline: none;
+  color: #98c7dc;
+  background-color: #112731;
 }
 
 .Paladin {
-  background-color: #c5891b;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  background-color: #c58a1b;
+  color: #ffe2ad;
+  cursor: pointer;
+}
+
+.Paladin:hover {
+  color: #c58a1b;
+  background-color: #ffe2ad;
+}
+
+.Paladin:focus {
+  outline: none;
+  color: #c58a1b;
+  background-color: #ffe2ad;
 }
 
 .Priest {
-  color: black;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
   background-color: #dedede;
+  color: #454545;
+  cursor: pointer;
+}
+
+.Priest:hover {
+  color: #dedede;
+  background-color: #454545;
+}
+
+.Priest:focus {
+  outline: none;
+  color: #dedede;
+  background-color: #454545;
 }
 
 .Rogue {
-  color: whitesmoke;
-  background-color: #232323;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  background-color: #242424;
+  color: #bdbdbd;
+  cursor: pointer;
+}
+
+.Rogue:hover {
+  color: #242424;
+  background-color: #bdbdbd;
+}
+
+.Rogue:focus {
+  outline: none;
+  color: #242424;
+  background-color: #bdbdbd;
 }
 
 .Shaman {
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
   background-color: #1d47aa;
+  color: #94b4ff;
+  cursor: pointer;
+}
+
+.Shaman:hover {
+  color: #1d47aa;
+  background-color: #94b4ff;
+}
+
+.Shaman:focus {
+  outline: none;
+  color: #1d47aa;
+  background-color: #94b4ff;
 }
 
 .Warrior {
-  background-color: #6d0d18;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  background-color: #6e0d18;
+  color: #f6b6bd;
+  cursor: pointer;
+}
+
+.Warrior:hover {
+  color: #6e0d18;
+  background-color: #f6b6bd;
+}
+
+.Warrior:focus {
+  outline: none;
+  color: #6e0d18;
+  background-color: #f6b6bd;
 }
 
 .Warlock {
-  background-color: #3a1058;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  background-color: #391056;
+  color: #d2a9ef;
+  cursor: pointer;
+}
+
+.Warlock:hover {
+  color: #391056;
+  background-color: #d2a9ef;
+}
+
+.Warlock:focus {
+  outline: none;
+  color: #391056;
+  background-color: #d2a9ef;
 }
 
 .Druid {
-  background-color: #6b2e10;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  background-color: #6a2e10;
+  color: #f4ccb8;
+  cursor: pointer;
+}
+
+.Druid:hover {
+  color: #6a2e10;
+  background-color: #f4ccb8;
+}
+
+.Druid:focus {
+  outline: none;
+  color: #6a2e10;
+  background-color: #f4ccb8;
 }
 
 .Demon-Hunter {
-  background-color: #005d30;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  background-color: #005c2f;
+  color: #8fffc9;
+  cursor: pointer;
+}
+
+.Demon-Hunter:hover {
+  color: #005c2f;
+  background-color: #8fffc9;
+}
+
+.Demon-Hunter:focus {
+  outline: none;
+  color: #005c2f;
+  background-color: #8fffc9;
 }
 
 .expansion-list {
@@ -92,13 +259,13 @@ h1 {
   margin: .2em;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
+  cursor: pointer;
   border: solid 0.1em green;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   margin: .2em auto;
   text-decoration: underline;
-  cursor: pointer;
 }
 
 .expansion-header:hover {
@@ -119,6 +286,21 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.class-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -127,6 +309,10 @@ h1 {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .player-class-header {
@@ -135,8 +321,11 @@ h1 {
   margin: .2em;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
-  border: solid 0.1em green;
   cursor: pointer;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  border: solid 0.1em green;
 }
 
 .player-class-header:hover {
@@ -171,8 +360,6 @@ h1 {
   padding: .2em;
   margin: .2em;
   font-size: 16.18px;
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
   border: solid 0.1em green;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -181,18 +368,6 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  cursor: pointer;
-}
-
-.card:hover {
-  color: white;
-  background-color: black;
-}
-
-.card:focus {
-  outline: none;
-  color: white;
-  background-color: black;
 }
 
 .card-description {

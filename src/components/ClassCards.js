@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Card from "./Card"
 
-export default function ClassList({playerClass, cards, classVisibility}) {
+export default function ClassCards({playerClass, cards, classVisibility}) {
     const [cardVisibility, setCardVisibility] = useState(false)
     const classCards = cards.filter(card => {
         return card.playerClass === playerClass;
@@ -10,7 +10,7 @@ export default function ClassList({playerClass, cards, classVisibility}) {
     if (classCards.length === 0) return (<></>);
     return (
         <div
-            className="class-list"
+            className="class-cards"
             style={{
                 display: classVisibility ? "flex" : "none",
             }}>

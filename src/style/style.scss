@@ -145,8 +145,9 @@ h1 {
 }
 .card-name {
 }
-.card-description {
+.card-description, .card-image {
     display: flex;
+    justify-content: center;
     flex-direction: column;
 }
 .card-artist, .card-flavor {
@@ -154,6 +155,11 @@ h1 {
 }
 .card-artist {
     text-decoration: underline;
+}
+.description-btn {
+    color: $primary-color;
+    background-color: $secondary-color;
+    @include hover-outline();
 }
 // 4.5: tags
 
@@ -172,14 +178,15 @@ header, nav {
 img {
     width: 300px;
     height: 400px;
+    margin: 0 auto; 
 }
 label, input {
     @include font-size(2);
 }
-input {
+input, button {
     background-color: $tertiary-color-200;
     color: $tertiary-color-600;
-    border: $tertiary-color-600 solid 5px;
+    border: $tertiary-color-600 solid .1em;
     transition-duration: 500ms;
     &:hover {
         box-shadow: .1em .1em .4em $tertiary-color-200;
@@ -188,6 +195,12 @@ input {
         outline: none;
         box-shadow: .1em .1em .4em $tertiary-color-200;
     }
+}
+button {
+    @include font-size(1);  
+    width: min-content;
+    padding: .2em;
+    margin: 0 auto;
 }
 
 // 5. animation

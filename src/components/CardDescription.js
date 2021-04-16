@@ -1,8 +1,8 @@
 import React from 'react'
 import useCardDescription from "../hooks/useCardDescription";
 
-export default function CardDescription({card, cardVisibility, descriptionVisibility}) {
-    const properties = useCardDescription(card)
+export default function CardDescription({card, cardVisibility, descriptionVisibility, setDescriptionVisibility}) {
+    const properties = useCardDescription(card, setDescriptionVisibility);
     return (
         <div 
             style={{

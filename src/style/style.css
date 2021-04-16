@@ -23,6 +23,22 @@
   background-color: black;
 }
 
+.Neutral .description-btn {
+  background-color: white;
+  color: black;
+}
+
+.Neutral .description-btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.Neutral .description-btn:focus {
+  outline: none;
+  color: white;
+  background-color: black;
+}
+
 .Hunter {
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
@@ -37,6 +53,22 @@
 }
 
 .Hunter:focus {
+  outline: none;
+  color: #467e02;
+  background-color: #dcfeb4;
+}
+
+.Hunter .description-btn {
+  background-color: #467e02;
+  color: #dcfeb4;
+}
+
+.Hunter .description-btn:hover {
+  color: #467e02;
+  background-color: #dcfeb4;
+}
+
+.Hunter .description-btn:focus {
   outline: none;
   color: #467e02;
   background-color: #dcfeb4;
@@ -61,6 +93,22 @@
   background-color: #112731;
 }
 
+.Mage .description-btn {
+  background-color: #98c7dc;
+  color: #112731;
+}
+
+.Mage .description-btn:hover {
+  color: #98c7dc;
+  background-color: #112731;
+}
+
+.Mage .description-btn:focus {
+  outline: none;
+  color: #98c7dc;
+  background-color: #112731;
+}
+
 .Paladin {
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
@@ -75,6 +123,22 @@
 }
 
 .Paladin:focus {
+  outline: none;
+  color: #c58a1b;
+  background-color: #ffe2ad;
+}
+
+.Paladin .description-btn {
+  background-color: #c58a1b;
+  color: #ffe2ad;
+}
+
+.Paladin .description-btn:hover {
+  color: #c58a1b;
+  background-color: #ffe2ad;
+}
+
+.Paladin .description-btn:focus {
   outline: none;
   color: #c58a1b;
   background-color: #ffe2ad;
@@ -99,6 +163,22 @@
   background-color: #454545;
 }
 
+.Priest .description-btn {
+  background-color: #dedede;
+  color: #454545;
+}
+
+.Priest .description-btn:hover {
+  color: #dedede;
+  background-color: #454545;
+}
+
+.Priest .description-btn:focus {
+  outline: none;
+  color: #dedede;
+  background-color: #454545;
+}
+
 .Rogue {
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
@@ -113,6 +193,22 @@
 }
 
 .Rogue:focus {
+  outline: none;
+  color: #242424;
+  background-color: #bdbdbd;
+}
+
+.Rogue .description-btn {
+  background-color: #242424;
+  color: #bdbdbd;
+}
+
+.Rogue .description-btn:hover {
+  color: #242424;
+  background-color: #bdbdbd;
+}
+
+.Rogue .description-btn:focus {
   outline: none;
   color: #242424;
   background-color: #bdbdbd;
@@ -137,6 +233,22 @@
   background-color: #94b4ff;
 }
 
+.Shaman .description-btn {
+  background-color: #1d47aa;
+  color: #94b4ff;
+}
+
+.Shaman .description-btn:hover {
+  color: #1d47aa;
+  background-color: #94b4ff;
+}
+
+.Shaman .description-btn:focus {
+  outline: none;
+  color: #1d47aa;
+  background-color: #94b4ff;
+}
+
 .Warrior {
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
@@ -151,6 +263,22 @@
 }
 
 .Warrior:focus {
+  outline: none;
+  color: #6e0d18;
+  background-color: #f6b6bd;
+}
+
+.Warrior .description-btn {
+  background-color: #6e0d18;
+  color: #f6b6bd;
+}
+
+.Warrior .description-btn:hover {
+  color: #6e0d18;
+  background-color: #f6b6bd;
+}
+
+.Warrior .description-btn:focus {
   outline: none;
   color: #6e0d18;
   background-color: #f6b6bd;
@@ -175,6 +303,22 @@
   background-color: #d2a9ef;
 }
 
+.Warlock .description-btn {
+  background-color: #391056;
+  color: #d2a9ef;
+}
+
+.Warlock .description-btn:hover {
+  color: #391056;
+  background-color: #d2a9ef;
+}
+
+.Warlock .description-btn:focus {
+  outline: none;
+  color: #391056;
+  background-color: #d2a9ef;
+}
+
 .Druid {
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
@@ -194,6 +338,22 @@
   background-color: #f4ccb8;
 }
 
+.Druid .description-btn {
+  background-color: #6a2e10;
+  color: #f4ccb8;
+}
+
+.Druid .description-btn:hover {
+  color: #6a2e10;
+  background-color: #f4ccb8;
+}
+
+.Druid .description-btn:focus {
+  outline: none;
+  color: #6a2e10;
+  background-color: #f4ccb8;
+}
+
 .Demon-Hunter {
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
@@ -208,6 +368,22 @@
 }
 
 .Demon-Hunter:focus {
+  outline: none;
+  color: #005c2f;
+  background-color: #8fffc9;
+}
+
+.Demon-Hunter .description-btn {
+  background-color: #005c2f;
+  color: #8fffc9;
+}
+
+.Demon-Hunter .description-btn:hover {
+  color: #005c2f;
+  background-color: #8fffc9;
+}
+
+.Demon-Hunter .description-btn:focus {
   outline: none;
   color: #005c2f;
   background-color: #8fffc9;
@@ -409,10 +585,13 @@ h1 {
           flex-direction: column;
 }
 
-.card-description {
+.card-description, .card-image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -425,6 +604,25 @@ h1 {
 
 .card-artist {
   text-decoration: underline;
+}
+
+.description-btn {
+  color: black;
+  background-color: white;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  cursor: pointer;
+}
+
+.description-btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.description-btn:focus {
+  outline: none;
+  color: white;
+  background-color: black;
 }
 
 header, nav {
@@ -463,29 +661,39 @@ header a:focus, nav a:focus {
 img {
   width: 300px;
   height: 400px;
+  margin: 0 auto;
 }
 
 label, input {
   font-size: 32.36px;
 }
 
-input {
+input, button {
   background-color: #004d00;
   color: #b3ffb3;
-  border: #b3ffb3 solid 5px;
+  border: #b3ffb3 solid 0.1em;
   -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
 }
 
-input:hover {
+input:hover, button:hover {
   -webkit-box-shadow: 0.1em 0.1em 0.4em #004d00;
           box-shadow: 0.1em 0.1em 0.4em #004d00;
 }
 
-input:focus {
+input:focus, button:focus {
   outline: none;
   -webkit-box-shadow: 0.1em 0.1em 0.4em #004d00;
           box-shadow: 0.1em 0.1em 0.4em #004d00;
+}
+
+button {
+  font-size: 16.18px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: .2em;
+  margin: 0 auto;
 }
 
 @-webkit-keyframes loading {

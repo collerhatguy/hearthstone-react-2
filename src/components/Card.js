@@ -5,7 +5,6 @@ export default function Card({card, cardVisibility}) {
     const [descriptionVisibility, setDescriptionVisibility] = useState(false);
     return (
         <li 
-            onClick={() => setDescriptionVisibility(!descriptionVisibility)}
             tabIndex="2"
             className={`card ${card?.playerClass.replace(" ", "-")}`} 
             style={{
@@ -21,7 +20,14 @@ export default function Card({card, cardVisibility}) {
                 card={card} 
                 cardVisibility={cardVisibility} 
                 descriptionVisibility={descriptionVisibility}
+                setDescriptionVisibility={setDescriptionVisibility}
             />
+            <button 
+                className="description-btn"
+                onClick={()=>{setDescriptionVisibility(!descriptionVisibility)}}
+            >
+                Hide/Reveal
+            </button>
         </li>
     )
 }

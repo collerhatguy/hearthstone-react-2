@@ -12,6 +12,19 @@
         color: $first-color;
         background-color: $second-color;
     }
+    .description-btn {
+        background-color: $first-color;
+        color: $second-color;
+        &:hover {
+            color: $first-color;
+            background-color: $second-color;
+        }
+        &:focus {
+            outline: none;
+            color: $first-color;
+            background-color: $second-color;
+        }
+    }
 }
 .Neutral {
     @include hover-outline-cards(white, black);

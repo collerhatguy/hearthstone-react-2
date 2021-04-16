@@ -1,5 +1,5 @@
 import {useState} from "react";
-function useCardDescription(card) {
+function useCardDescription(card, setDescriptionVisibility) {
     // const renderHealth = () => {
     //     if (card.health) {
     //         return <div className="card-property">Health: {card.health}</div>
@@ -56,7 +56,10 @@ function useCardDescription(card) {
                         <img 
                             style={{ display: gold ? "block" : "none"}} 
                             src={card.imgGold} />
-                        <button onClick={() => {setGold(!gold)}}>Gold</button>
+                        <button 
+                            className="description-btn"
+                            onClick={() => {setGold(!gold);}}
+                        >Gold</button>
                     </div>
         }
     }   

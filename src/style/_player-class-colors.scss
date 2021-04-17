@@ -2,7 +2,6 @@
     transition-duration: 300ms;
     background-color: $first-color;
     color: $second-color;
-    cursor: pointer;
     &:hover {
         color: $first-color;
         background-color: $second-color;
@@ -15,6 +14,7 @@
     .description-btn {
         background-color: $first-color;
         color: $second-color;
+        cursor: pointer;
         &:hover {
             color: $first-color;
             background-color: $second-color;

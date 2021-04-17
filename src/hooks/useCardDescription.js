@@ -1,5 +1,5 @@
 import {useState} from "react";
-function useCardDescription(card, setDescriptionVisibility) {
+function useCardDescription(card) {
     // const renderHealth = () => {
     //     if (card.health) {
     //         return <div className="card-property">Health: {card.health}</div>

@@ -3,8 +3,8 @@
 // 2. variables
 // 3. mixins
 // 4. class definers
-// 4.5: tags
-// 5. animation
+// 5. tags
+// 6. animation
 
 // 1. default stats
 
@@ -15,19 +15,9 @@
 }
 
 // 2. variables
+@import "./variables";
 
-$primary-color: black;
-$secondary-color: white;
-$tertiary-color-100: hsl(120, 100%, 5%);
-$tertiary-color-200: hsl(120, 100%, 15%);
-$tertiary-color-300: hsl(120, 100%, 25%);
-$tertiary-color-400: hsl(120, 100%, 45%);
-$tertiary-color-500: hsl(120, 100%, 65%);
-$tertiary-color-600: hsl(120, 100%, 85%);
-$base-font-size: 10px;
-$golden-ratio: 1.618;
-$loading-dot-size: 1em;
-@import "./_card-colors";
+@import "./player-class-colors";
 
 // 3. mixins
 
@@ -54,156 +44,11 @@ $loading-dot-size: 1em;
 }
 
 // 4. class definers
-.loader {
-    @include font-size(2);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.loading-dot {
-    width: $loading-dot-size;
-    height: $loading-dot-size;
-    background-color: $primary-color;
-    border-radius: 100%;
-    position: absolute;
-    &:nth-child(1) {
-        animation: loading 2500ms -600ms linear infinite;
-        left: -$loading-dot-size - .5em;
-    }
-    &:nth-child(2) {
-        animation: loading 2500ms -300ms linear infinite;
-    }
-    &:nth-child(3) {
-        animation: loading 2500ms linear infinite;
-        left: $loading-dot-size + .5em;;
-    }
-}
-.expansion-list {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.expansion {
-    width: 95vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-h1 {
-    @include font-size(4);
-    @include default-spacing();
-}
-.expansion-header {
-    @include font-size(3);
-    @include default-spacing();
-    @include hover-outline();
-    border: solid .1em $tertiary-color-300;
-    width: min-content;
-    margin: .2em auto;
-    text-decoration: underline;
-}
-.class-list {
-    @include default-spacing();
-    width: 95vw;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-.class-cards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-.player-class-header {
-    @include font-size(2);
-    @include default-spacing();
-    @include hover-outline();
-    width: min-content;
-    border: solid .1em $tertiary-color-300;
-}
-.card-list {
-    @include default-spacing();
-    width: 90vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.card {
-    @include default-spacing();
-    @include font-size(1);
-    border: solid .1em $tertiary-color-300;
-    display: flex;
-    flex-direction: column;
-}
-.card-name {
-}
-.card-description, .card-image {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-.card-artist, .card-flavor {
-    font-weight: 900;
-}
-.card-artist {
-    text-decoration: underline;
-}
-.description-btn {
-    color: $primary-color;
-    background-color: $secondary-color;
-    @include hover-outline();
-}
-// 4.5: tags
+@import "./class-definers";
+// 5. tags
+@import "./tags";
 
-header, nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    a {
-        @include font-size(2);
-        @include hover-outline();
-        color: $primary-color;
-        text-decoration: none;
-    }
-}
-img {
-    width: 300px;
-    height: 400px;
-    margin: 0 auto; 
-}
-label, input {
-    @include font-size(2);
-}
-input, button {
-    background-color: $tertiary-color-200;
-    color: $tertiary-color-600;
-    border: $tertiary-color-600 solid .1em;
-    transition-duration: 500ms;
-    &:hover {
-        box-shadow: .1em .1em .4em $tertiary-color-200;
-    }
-    &:focus {
-        outline: none;
-        box-shadow: .1em .1em .4em $tertiary-color-200;
-    }
-}
-button {
-    @include font-size(1);  
-    width: min-content;
-    padding: .2em;
-    margin: 0 auto;
-}
-
-// 5. animation
+// 6. animation
 @keyframes loading {
     0% {opacity: 0;}
     50% {opacity: 1;}

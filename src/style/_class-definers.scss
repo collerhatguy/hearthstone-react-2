@@ -1,0 +1,98 @@
+.loader {
+    @include font-size(2);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading-dot {
+    width: $loading-dot-size;
+    height: $loading-dot-size;
+    background-color: $primary-color;
+    border-radius: 100%;
+    position: absolute;
+    &:nth-child(1) {
+        animation: loading 2500ms -600ms linear infinite;
+        left: -$loading-dot-size - .5em;
+    }
+    &:nth-child(2) {
+        animation: loading 2500ms -300ms linear infinite;
+    }
+    &:nth-child(3) {
+        animation: loading 2500ms linear infinite;
+        left: $loading-dot-size + .5em;;
+    }
+}
+.expansion-list {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.expansion {
+    width: 95vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.expansion-header {
+    @include font-size(3);
+    @include default-spacing();
+    @include hover-outline();
+    border: solid .1em $tertiary-color-300;
+    width: min-content;
+    margin: .2em auto;
+    text-decoration: underline;
+}
+.class-list {
+    @include default-spacing();
+    width: 95vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.class-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.player-class-header {
+    @include font-size(2);
+    @include default-spacing();
+    @include hover-outline();
+    width: min-content;
+    border: solid .1em $tertiary-color-300;
+}
+.card-list {
+    @include default-spacing();
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card {
+    @include default-spacing();
+    @include font-size(1);
+    border: solid .1em $tertiary-color-300;
+    display: flex;
+    flex-direction: column;
+}
+.card-name {
+}
+.card-description, .card-image {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.card-artist, .card-flavor {
+    font-weight: 900;
+}
+.card-artist {
+    text-decoration: underline;
+}

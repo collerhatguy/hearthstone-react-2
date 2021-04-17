@@ -9,7 +9,6 @@
           transition-duration: 300ms;
   background-color: white;
   color: black;
-  cursor: pointer;
 }
 
 .Neutral:hover {
@@ -26,6 +25,7 @@
 .Neutral .description-btn {
   background-color: white;
   color: black;
+  cursor: pointer;
 }
 
 .Neutral .description-btn:hover {
@@ -44,7 +44,6 @@
           transition-duration: 300ms;
   background-color: #467e02;
   color: #dcfeb4;
-  cursor: pointer;
 }
 
 .Hunter:hover {
@@ -61,6 +60,7 @@
 .Hunter .description-btn {
   background-color: #467e02;
   color: #dcfeb4;
+  cursor: pointer;
 }
 
 .Hunter .description-btn:hover {
@@ -79,7 +79,6 @@
           transition-duration: 300ms;
   background-color: #98c7dc;
   color: #112731;
-  cursor: pointer;
 }
 
 .Mage:hover {
@@ -96,6 +95,7 @@
 .Mage .description-btn {
   background-color: #98c7dc;
   color: #112731;
+  cursor: pointer;
 }
 
 .Mage .description-btn:hover {
@@ -114,7 +114,6 @@
           transition-duration: 300ms;
   background-color: #c58a1b;
   color: #ffe2ad;
-  cursor: pointer;
 }
 
 .Paladin:hover {
@@ -131,6 +130,7 @@
 .Paladin .description-btn {
   background-color: #c58a1b;
   color: #ffe2ad;
+  cursor: pointer;
 }
 
 .Paladin .description-btn:hover {
@@ -149,7 +149,6 @@
           transition-duration: 300ms;
   background-color: #dedede;
   color: #454545;
-  cursor: pointer;
 }
 
 .Priest:hover {
@@ -166,6 +165,7 @@
 .Priest .description-btn {
   background-color: #dedede;
   color: #454545;
+  cursor: pointer;
 }
 
 .Priest .description-btn:hover {
@@ -184,7 +184,6 @@
           transition-duration: 300ms;
   background-color: #242424;
   color: #bdbdbd;
-  cursor: pointer;
 }
 
 .Rogue:hover {
@@ -201,6 +200,7 @@
 .Rogue .description-btn {
   background-color: #242424;
   color: #bdbdbd;
+  cursor: pointer;
 }
 
 .Rogue .description-btn:hover {
@@ -219,7 +219,6 @@
           transition-duration: 300ms;
   background-color: #1d47aa;
   color: #94b4ff;
-  cursor: pointer;
 }
 
 .Shaman:hover {
@@ -236,6 +235,7 @@
 .Shaman .description-btn {
   background-color: #1d47aa;
   color: #94b4ff;
+  cursor: pointer;
 }
 
 .Shaman .description-btn:hover {
@@ -254,7 +254,6 @@
           transition-duration: 300ms;
   background-color: #6e0d18;
   color: #f6b6bd;
-  cursor: pointer;
 }
 
 .Warrior:hover {
@@ -271,6 +270,7 @@
 .Warrior .description-btn {
   background-color: #6e0d18;
   color: #f6b6bd;
+  cursor: pointer;
 }
 
 .Warrior .description-btn:hover {
@@ -289,7 +289,6 @@
           transition-duration: 300ms;
   background-color: #391056;
   color: #d2a9ef;
-  cursor: pointer;
 }
 
 .Warlock:hover {
@@ -306,6 +305,7 @@
 .Warlock .description-btn {
   background-color: #391056;
   color: #d2a9ef;
+  cursor: pointer;
 }
 
 .Warlock .description-btn:hover {
@@ -324,7 +324,6 @@
           transition-duration: 300ms;
   background-color: #6a2e10;
   color: #f4ccb8;
-  cursor: pointer;
 }
 
 .Druid:hover {
@@ -341,6 +340,7 @@
 .Druid .description-btn {
   background-color: #6a2e10;
   color: #f4ccb8;
+  cursor: pointer;
 }
 
 .Druid .description-btn:hover {
@@ -359,7 +359,6 @@
           transition-duration: 300ms;
   background-color: #005c2f;
   color: #8fffc9;
-  cursor: pointer;
 }
 
 .Demon-Hunter:hover {
@@ -376,6 +375,7 @@
 .Demon-Hunter .description-btn {
   background-color: #005c2f;
   color: #8fffc9;
+  cursor: pointer;
 }
 
 .Demon-Hunter .description-btn:hover {
@@ -460,12 +460,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-h1 {
-  font-size: 64.72px;
-  padding: .2em;
-  margin: .2em;
 }
 
 .expansion-header {
@@ -606,23 +600,10 @@ h1 {
   text-decoration: underline;
 }
 
-.description-btn {
-  color: black;
-  background-color: white;
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
-  cursor: pointer;
-}
-
-.description-btn:hover {
-  color: white;
-  background-color: black;
-}
-
-.description-btn:focus {
-  outline: none;
-  color: white;
-  background-color: black;
+h1 {
+  font-size: 64.72px;
+  padding: .2em;
+  margin: .2em;
 }
 
 header, nav {
@@ -674,6 +655,7 @@ input, button {
   border: #b3ffb3 solid 0.1em;
   -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
+  cursor: pointer;
 }
 
 input:hover, button:hover {

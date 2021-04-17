@@ -38,11 +38,15 @@ function useCardDescription(card) {
     const renderArtist= () => {
         if (card.artist) {
             return  <div className="card-artist">Artist: {card.artist}</div>
+        } else {
+            return <div className="card-artist">This card has no registered artist</div>
         }
     }   
     const renderFlavor = () => {
         if (card.flavor) {
             return <div className="card-flavor">Flavor: {card.flavor}</div>
+        } else {
+            return <div className="card-flavor">This card has no flavor text</div>
         }
     }   
 
@@ -52,16 +56,19 @@ function useCardDescription(card) {
             return <div className="card-image">
                         <img
                             style={{ display: gold ? "none" : "block"}} 
-                            src={card.img} />
+                            src={card.img}    
+                        />
                         <img 
                             style={{ display: gold ? "block" : "none"}} 
-                            src={card.imgGold} />
+                            src={card.imgGold}
+                            alt="there is no golden version of this card" 
+                        />
                         <button 
                             className="description-btn"
                             onClick={() => {setGold(!gold);}}
                         >Gold</button>
                     </div>
-        }
+        } 
     }   
     return [renderImage, renderArtist, renderFlavor]
 }

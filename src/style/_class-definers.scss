@@ -23,6 +23,9 @@
         left: $loading-dot-size + .5em;;
     }
 }
+.expansion-list, .expansion, .class-list, .player-class-header, .card {
+    animation: reveal 300ms linear forwards;
+}
 .expansion-list {
     width: 100vw;
     display: flex;
@@ -60,6 +63,8 @@
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
 }
 .player-class-header {
     @include font-size(2);
@@ -68,7 +73,7 @@
     width: min-content;
     border: solid .1em $tertiary-color-300;
 }
-.card-list {
+.card-list, .search-list {
     @include default-spacing();
     width: 90vw;
     display: flex;

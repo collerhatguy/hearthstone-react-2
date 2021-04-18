@@ -54,3 +54,7 @@
     50% {opacity: 1;}
     100% {opacity: 0;}
 }
+@keyframes reveal {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

@@ -1,5 +1,5 @@
 // this is a hook that takes a url and returns data
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 function useFetchAllExpansions(url) {
 
@@ -38,7 +38,10 @@ function useFetchAllExpansions(url) {
     useEffect(() => {
       getData(url)
     }, [])
-    return [data, isDone];
+    const dataMemorized = useMemo(() => {
+        return data;
+    }, [url, isDone]);
+    return [dataMemorized, isDone];
 }
 const convertToArray = (data) => {
     return Object.keys(data).map(expansionName => {

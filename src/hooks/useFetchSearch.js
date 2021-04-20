@@ -12,6 +12,8 @@ function useFetchSearch(search) {
                     "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com"
                 }
             })
+
+            if (!response.ok) return searchResponse;
             const data = await response.json();
             if (data.length > 9) {
                 setSearchResponse(data.slice(0, 10));

@@ -8,7 +8,7 @@ export default function ExpansionList() {
     const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards";
     const [data, isDone] = useFetchAllExpansions(url)
     return (
-        <div className="expansion-list">
+        <div id="expansion-list">
             <h1>Hearthstone Cards</h1>
             <div 
                 style={{ display: isDone ? "none" : "block", }}

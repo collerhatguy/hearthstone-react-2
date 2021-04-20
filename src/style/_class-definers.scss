@@ -23,10 +23,13 @@
         left: $loading-dot-size + .5em;;
     }
 }
-.expansion-list, .expansion, .class-list, .player-class-header, .card {
+#search-page, #expansion-list {
+    margin-top: 55px;
+}
+#expansion-list, .expansion, .class-list, .player-class-header, .card {
     animation: reveal 300ms linear forwards;
 }
-.expansion-list {
+#expansion-list, #search-list {
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -43,7 +46,7 @@
 .expansion-header {
     @include font-size(3);
     @include default-spacing();
-    @include hover-outline();
+    @include hover-outline($primary-color, $secondary-color);
     border: solid .1em $tertiary-color-300;
     width: min-content;
     margin: .2em auto;
@@ -69,11 +72,11 @@
 .player-class-header {
     @include font-size(2);
     @include default-spacing();
-    @include hover-outline();
+    @include hover-outline($primary-color, $secondary-color);
     width: min-content;
     border: solid .1em $tertiary-color-300;
 }
-.card-list, .search-list {
+.card-list, #search-list {
     @include default-spacing();
     width: 90vw;
     display: flex;

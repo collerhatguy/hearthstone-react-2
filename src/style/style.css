@@ -428,12 +428,16 @@
   left: 1.5em;
 }
 
-.expansion-list, .expansion, .class-list, .player-class-header, .card {
+#search-page, #expansion-list {
+  margin-top: 55px;
+}
+
+#expansion-list, .expansion, .class-list, .player-class-header, .card {
   -webkit-animation: reveal 300ms linear forwards;
           animation: reveal 300ms linear forwards;
 }
 
-.expansion-list {
+#expansion-list, #search-list {
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -473,7 +477,8 @@
   margin: .2em;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
-  cursor: pointer;
+  background-color: black;
+  color: white;
   border: solid 0.1em green;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -483,14 +488,14 @@
 }
 
 .expansion-header:hover {
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
 }
 
 .expansion-header:focus {
   outline: none;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
 }
 
 .class-list {
@@ -537,7 +542,8 @@
   margin: .2em;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
-  cursor: pointer;
+  background-color: black;
+  color: white;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -545,17 +551,17 @@
 }
 
 .player-class-header:hover {
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
 }
 
 .player-class-header:focus {
   outline: none;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
 }
 
-.card-list, .search-list {
+.card-list, #search-list {
   padding: .2em;
   margin: .2em;
   width: 90vw;
@@ -615,6 +621,8 @@ h1 {
 
 header, nav {
   width: 100%;
+  position: fixed;
+  top: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -624,28 +632,32 @@ header, nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #004d00;
+  z-index: 1;
 }
 
 header a, nav a {
   font-size: 32.36px;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
-  cursor: pointer;
+  background-color: #004d00;
+  color: #b3ffb3;
   padding: .2em;
   margin: .2em;
-  color: black;
+  color: #b3ffb3;
+  background-color: #004d00;
   text-decoration: none;
 }
 
 header a:hover, nav a:hover {
-  color: white;
-  background-color: black;
+  color: #004d00;
+  background-color: #b3ffb3;
 }
 
 header a:focus, nav a:focus {
   outline: none;
-  color: white;
-  background-color: black;
+  color: #004d00;
+  background-color: #b3ffb3;
 }
 
 img {
@@ -655,7 +667,9 @@ img {
 }
 
 label, input {
-  font-size: 32.36px;
+  font-size: 48.54px;
+  padding: .2em;
+  margin: .2em;
 }
 
 input, button {

@@ -5,6 +5,7 @@
 // 4. class definers
 // 5. tags
 // 6. animation
+// 7. media queries
 
 // 1. default stats
 
@@ -12,6 +13,7 @@
     padding: 0;
     margin: 0;
     text-align: center;
+    box-sizing: border-box;
 }
 
 // 2. variables
@@ -58,4 +60,20 @@
 @keyframes reveal {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+// 7. media queries
+@media only screen and (min-width: 360px) {
+    nav {
+        flex-direction: column;
+    }
+    #search-page, #expansion-list {
+        margin-top: 100px;
+    }
+    #search-page {
+        margin-top: 130px;
+    }
+    label, input {
+        width: 80%;
+    }
 }

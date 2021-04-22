@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import Card from "./Card"
 
 export default function ClassCards({playerClass, cards, classVisibility}) {
-    const [cardVisibility, setCardVisibility] = useState(false)
-    const classCards = cards.filter(card => {
-        return card.playerClass === playerClass;
-    })
-    // if the class has no cards in this expansion then dont render anything
+    const [cardVisibility, setCardVisibility] = useState(false);
+    const classCards = useMemo(() => {
+        return cards.filter(card => {
+            return card.playerClass === playerClass;
+        })
+    }, [cards])
     if (classCards.length === 0) return (<></>);
+    
     return (
         <div
             className="class-cards"
@@ -18,7 +20,7 @@ export default function ClassCards({playerClass, cards, classVisibility}) {
                 className="player-class-header"
                 tabIndex="1"
                 onClick={() => setCardVisibility(!cardVisibility)}
-            >{playerClass}</h2>
+            >{playerClass}: {classCards.length} Cards</h2>
             <ul 
                 className="card-list"
             >

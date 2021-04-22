@@ -1,9 +1,11 @@
 // this is a hook that takes a url and returns data
 import { useState, useEffect, useMemo } from "react";
 
-function useFetchAllExpansions(url) {
+function useFetchAllExpansions() {
 
     
+    // our url
+    const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards"
     // data varibale
     const [data, setData] = useState([]);
     // so we know when we are done loading

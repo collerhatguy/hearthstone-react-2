@@ -3,10 +3,8 @@ import Expansion from "./Expansion";
 import useFetchAllExpansions from "../hooks/useFetchAllExpansions";
 
 export default function ExpansionList() {
-    
-    // our url
-    const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards";
-    const [data, isDone] = useFetchAllExpansions(url);
+    ;
+    const [data, isDone] = useFetchAllExpansions();
     return (
         <div id="expansion-list">
             <h1>Hearthstone Cards</h1>

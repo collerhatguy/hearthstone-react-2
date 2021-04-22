@@ -20,7 +20,7 @@ export default function ClassCards({playerClass, cards, classVisibility}) {
                 className="player-class-header"
                 tabIndex="1"
                 onClick={() => setCardVisibility(!cardVisibility)}
-            >{playerClass}: {classCards.length} Cards</h2>
+            >{playerClass}: <span>{classCards.length} Cards</span></h2>
             <ul 
                 className="card-list"
             >

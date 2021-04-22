@@ -70,7 +70,6 @@
     margin: 0 auto;
 }
 .player-class-header {
-    @include font-size(2);
     @include default-spacing();
     @include hover-outline($primary-color, $secondary-color);
     width: min-content;

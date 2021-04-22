@@ -22,45 +22,16 @@
 @import "./player-class-colors";
 
 // 3. mixins
-
-@mixin default-spacing() {
-    padding: .2em;
-    margin: .2em;
-}
-@mixin font-size($number) {
-    font-size: $base-font-size * $golden-ratio * $number;
-}
-
-@mixin hover-outline($first-color, $second-color) {
-    transition-duration: 300ms;
-    background-color: $first-color;
-    color: $second-color;
-    &:hover {
-        color: $first-color;
-        background-color: $second-color;
-    }
-    &:focus {
-        outline: none;
-        color: $first-color;
-        background-color: $second-color;
-    }
-}
+@import "./mixins";
 
 // 4. class definers
 @import "./class-definers";
+
 // 5. tags
 @import "./tags";
 
 // 6. animation
-@keyframes loading {
-    0% {opacity: 0;}
-    50% {opacity: 1;}
-    100% {opacity: 0;}
-}
-@keyframes reveal {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
+@import "./animation";
 
 // 7. media queries
 @media only screen and (max-width: 420px) {

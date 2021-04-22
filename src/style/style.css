@@ -2,6 +2,8 @@
   padding: 0;
   margin: 0;
   text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .Neutral {
@@ -537,7 +539,6 @@
 }
 
 .player-class-header {
-  font-size: 32.36px;
   padding: .2em;
   margin: .2em;
   -webkit-transition-duration: 300ms;
@@ -617,6 +618,14 @@ h1 {
   font-size: 64.72px;
   padding: .2em;
   margin: .2em;
+}
+
+h2 {
+  font-size: 48.54px;
+}
+
+h2 span {
+  font-size: 32.36px;
 }
 
 header, nav {
@@ -740,6 +749,24 @@ button {
   }
   to {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #search-page, #expansion-list {
+    margin-top: 100px;
+  }
+  #search-page {
+    margin-top: 130px;
+  }
+  label, input {
+    width: 80%;
   }
 }
 /*# sourceMappingURL=style.css.map */

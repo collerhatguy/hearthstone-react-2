@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import Card from "./Card"
 
-export default function ClassCards({playerClass, cards, classVisibility}) {
+export default function ClassCards({playerClass, cards, classVisibility, sequence}) {
     const [cardVisibility, setCardVisibility] = useState(false);
     const classCards = useMemo(() => {
         return cards.filter(card => {
@@ -15,6 +15,7 @@ export default function ClassCards({playerClass, cards, classVisibility}) {
             className="class-cards"
             style={{
                 display: classVisibility ? "flex" : "none",
+                animationDelay: `${sequence * 50}ms`
             }}>
             <h2 
                 className="player-class-header"

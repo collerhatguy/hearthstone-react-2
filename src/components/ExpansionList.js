@@ -18,7 +18,10 @@ export default function ExpansionList() {
             </div>
             
             {data.map((expansion, index) => {
-                return <Expansion expansion={expansion} key={index} />
+                return <Expansion 
+                            expansion={expansion} 
+                            sequence={index}
+                            key={index} />
             })}
         </div>         
     )

@@ -28,6 +28,7 @@ export default function ClassCards({playerClass, cards, classVisibility}) {
                     return <Card 
                                 card={card} 
                                 cardVisibility={cardVisibility} 
+                                sequence={index}
                                 key={index} 
                             />
                 })}

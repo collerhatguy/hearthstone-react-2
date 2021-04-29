@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import useCardDescription from "../hooks/useCardDescription";
 
-export default function Card({card, cardVisibility}) {
+export default function Card({card, cardVisibility, sequence}) {
     const [descriptionVisibility, setDescriptionVisibility] = useState(false);
     const properties = useCardDescription(card);
     return (
@@ -11,6 +11,7 @@ export default function Card({card, cardVisibility}) {
             style={{
                 display: cardVisibility ? "flex" : "none",
             }}
+            data-sequence={`${sequence}00ms`}
         >
             <h3 
                 className="card-name"

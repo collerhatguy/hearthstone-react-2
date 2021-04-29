@@ -579,7 +579,7 @@
       flex-wrap: wrap;
 }
 
-.card {
+.card[data-sequence] {
   padding: .2em;
   margin: .2em;
   font-size: 16.18px;
@@ -591,6 +591,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-animation-delay: attr(data-sequence);
+          animation-delay: attr(data-sequence);
 }
 
 .card-description, .card-image {

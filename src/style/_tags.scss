@@ -5,6 +5,7 @@ h1 {
 }
 h2 {
     @include font-size(3);
+    cursor: pointer;
     span {
         @include font-size(2);
     }

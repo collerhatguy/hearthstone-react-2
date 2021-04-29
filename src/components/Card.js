@@ -10,8 +10,8 @@ export default function Card({card, cardVisibility, sequence}) {
             className={`card ${card?.playerClass.replace(" ", "-")}`} 
             style={{
                 display: cardVisibility ? "flex" : "none",
+                animationDelay: `${sequence * 50}ms`,
             }}
-            data-sequence={`${sequence}00ms`}
         >
             <h3 
                 className="card-name"

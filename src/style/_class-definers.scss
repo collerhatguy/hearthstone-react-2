@@ -83,13 +83,13 @@
     align-items: center;
     flex-wrap: wrap;
 }
-.card[data-sequence] {
+.card {
     @include default-spacing();
     @include font-size(1);
     border: solid .1em $tertiary-color-300;
     display: flex;
     flex-direction: column;
-    animation-delay: attr(data-sequence);
+    opacity: 0;
 }
 .card-name {
 }

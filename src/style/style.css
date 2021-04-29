@@ -579,7 +579,7 @@
       flex-wrap: wrap;
 }
 
-.card[data-sequence] {
+.card {
   padding: .2em;
   margin: .2em;
   font-size: 16.18px;
@@ -591,8 +591,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-animation-delay: attr(data-sequence);
-          animation-delay: attr(data-sequence);
+  opacity: 0;
 }
 
 .card-description, .card-image {
@@ -624,6 +623,7 @@ h1 {
 
 h2 {
   font-size: 48.54px;
+  cursor: pointer;
 }
 
 h2 span {

@@ -15,7 +15,7 @@ export default function ClassCards({playerClass, cards, classVisibility, sequenc
             className="class-cards"
             style={{
                 display: classVisibility ? "flex" : "none",
-                animationDelay: `${sequence * 50}ms`
+                animationDelay: `${sequence * 100}ms`
             }}>
             <h2 
                 className="player-class-header"

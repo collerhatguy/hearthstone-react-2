@@ -7,10 +7,9 @@ export default function Card({card, cardVisibility, sequence}) {
     return (
         <li 
             tabIndex="2"
-            className={`card ${card?.playerClass.replace(" ", "-")}`} 
+            className={`card ${card?.playerClass.replace(" ", "-")} ${cardVisibility ? "" : "hidden"}`} 
             style={{
-                display: cardVisibility ? "flex" : "none",
-                animationDelay: `${sequence * 50}ms`,
+                animationDelay: `${sequence * 25}ms`,
             }}
         >
             <h3 

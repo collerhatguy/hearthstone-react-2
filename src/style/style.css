@@ -594,6 +594,10 @@
   opacity: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 .card-description, .card-image {
   display: -webkit-box;
   display: -ms-flexbox;

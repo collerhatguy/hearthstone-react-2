@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import useFetchSearch from "../hooks/useFetchSearch";
-import SearchList from "../components/SearchList";
+import SearchList from "./SearchList";
 
 export default function SearchPage() {
     // our search query

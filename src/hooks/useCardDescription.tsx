@@ -1,4 +1,17 @@
 import {useState} from "react";
+interface card {
+    health?: number,
+    attack?: number,
+    cost?: number,
+    text?: String,
+    type?: String,
+    race?: String,
+    rarity?: number,
+    artist?: number,
+    flavor?: number,
+    img?: number,
+    imgGold?: number,
+}
 function useCardDescription(card) {
     // const renderHealth = () => {
     //     if (card.health) {

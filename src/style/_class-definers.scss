@@ -89,6 +89,7 @@
     border: solid .1em $tertiary-color-300;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     opacity: 0;
 }
 .hidden {
@@ -100,7 +101,9 @@
     flex-direction: column;
 }
 .card-artist, .card-flavor {
+    width: 80%;
     font-weight: 900;
+    margin: 1rem auto;
 }
 .card-artist {
     text-decoration: underline;

@@ -38,6 +38,7 @@ label, input {
     @include default-spacing();
 }
 input, button {
+    @include default-spacing();
     background-color: $tertiary-color-200;
     color: $tertiary-color-600;
     border: $tertiary-color-600 solid .1em;

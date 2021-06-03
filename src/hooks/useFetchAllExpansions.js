@@ -8,7 +8,6 @@ function useFetchAllExpansions() {
     const [data, setData] = useState([]);
     // so we know when we are done loading
     const [isDone, setIsDone] = useState(false);
-    
     const getData = async (url) => {
         try {
             const response = await fetch(url, {
@@ -39,10 +38,7 @@ function useFetchAllExpansions() {
     useEffect(() => {
       getData(url)
     }, [])
-    const dataMemorized = useMemo(() => {
-        return data;
-    }, [url, isDone]);
-    return [dataMemorized, isDone];
+    return [data, isDone];
 }
 const convertToArray = (data) => {
     return Object.keys(data).map(expansionName => {

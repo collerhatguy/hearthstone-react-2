@@ -32,7 +32,7 @@ export default function Card({card, cardVisibility, sequence}) {
                 className="description-btn"
                 onClick={()=>{setDescriptionVisibility(!descriptionVisibility)}}
             >
-                Hide/Reveal
+               {descriptionVisibility ? "Hide" : "Reveal"}
             </button>
         </li>
     )

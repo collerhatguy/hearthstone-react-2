@@ -11,7 +11,7 @@ export default function ClassCards({playerClass, cards, classVisibility, sequenc
     if (classCards.length === 0) return (<></>);
     
     return (
-        <div
+        <li
             className="class-cards"
             style={{
                 display: classVisibility ? "flex" : "none",
@@ -34,6 +34,6 @@ export default function ClassCards({playerClass, cards, classVisibility, sequenc
                             />
                 })}
             </ul>
-        </div>
+        </li>
     )
 } 

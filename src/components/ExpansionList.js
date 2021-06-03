@@ -6,23 +6,25 @@ export default function ExpansionList() {
     ;
     const [data, isDone] = useFetchAllExpansions();
     return (
-        <div id="expansion-list">
+        <main id="expansion-list">
             <h1>Hearthstone Cards</h1>
-            <div 
+            <aside 
                 style={{ display: isDone ? "none" : "block", }}
                 className="loader"
             >
                 <div className="loading-dot"></div>
                 <div className="loading-dot"></div>
                 <div className="loading-dot"></div>
-            </div>
+            </aside>
+            <ul>
+                {data.map((expansion, index) => {
+                    return <Expansion 
+                                expansion={expansion} 
+                                sequence={index}
+                                key={index} />
+                })}
+            </ul>
             
-            {data.map((expansion, index) => {
-                return <Expansion 
-                            expansion={expansion} 
-                            sequence={index}
-                            key={index} />
-            })}
-        </div>         
+        </main>         
     )
 }

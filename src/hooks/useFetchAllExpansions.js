@@ -2,14 +2,13 @@
 import { useState, useEffect, useMemo } from "react";
 
 function useFetchAllExpansions() {
-
-    
     // our url
     const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards"
     // data varibale
     const [data, setData] = useState([]);
     // so we know when we are done loading
     const [isDone, setIsDone] = useState(false);
+    
     const getData = async (url) => {
         try {
             const response = await fetch(url, {

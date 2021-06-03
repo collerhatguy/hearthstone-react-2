@@ -8,7 +8,7 @@ export default function Expansion({expansion, sequence}) {
   "Hunter", "Mage", "Paladin", "Shaman",
   "Priest", "Druid", "Warlock", "Demon Hunter"];
     return (
-        <div className="expansion"
+        <li className="expansion"
             style={{
                 animationDelay: `${sequence * 50}ms`,
             }}>
@@ -17,7 +17,7 @@ export default function Expansion({expansion, sequence}) {
                 onClick={() => setClassVisibility(!classVisibility)}>
                 {expansion.name}
             </h2>
-            <div
+            <ul
                 className="class-list">
                 {cardClasses.map((playerClass, index) => {
                     return <ClassCards 
@@ -28,7 +28,7 @@ export default function Expansion({expansion, sequence}) {
                                 key={index}
                             />
                 })}
-            </div>
-        </div>
+            </ul>
+        </li>
     )
 }

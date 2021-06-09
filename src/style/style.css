@@ -498,7 +498,7 @@ body {
 }
 
 #expansion-list, #search-list {
-  width: 100vw;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -541,6 +541,9 @@ body {
   background-color: black;
   color: white;
   border: solid 0.1rem green;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
   width: 60%;
   margin: .2rem auto;
   text-decoration: underline;
@@ -560,6 +563,9 @@ body {
 .class-list {
   padding: .2em;
   margin: .2em;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
   width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -638,7 +644,7 @@ body {
   padding: .2em;
   margin: .2em;
   font-size: 16.18px;
-  border: solid 0.1em green;
+  border: solid 0.1rem green;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -681,6 +687,12 @@ body {
 
 .card-artist {
   text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .player-class-header, .expansion, .expansion-header, .class-list {
+    width: 95%;
+  }
 }
 
 h1 {

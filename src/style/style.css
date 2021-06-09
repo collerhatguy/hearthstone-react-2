@@ -656,6 +656,10 @@ body {
   display: none;
 }
 
+.card-name {
+  font-size: 32.36px;
+}
+
 .card-description, .card-image {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -752,29 +756,25 @@ input, button {
   margin: .2em;
   background-color: #004d00;
   color: #b3ffb3;
-  border: #b3ffb3 solid 0.1em;
+  border: #b3ffb3 solid 0.1rem;
   -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
   cursor: pointer;
 }
 
-input:hover, button:hover {
-  -webkit-box-shadow: 0.1em 0.1em 0.4em #004d00;
-          box-shadow: 0.1em 0.1em 0.4em #004d00;
-}
-
-input:focus, button:focus {
+input:focus, input:hover, button:focus, button:hover {
   outline: none;
-  -webkit-box-shadow: 0.1em 0.1em 0.4em #004d00;
-          box-shadow: 0.1em 0.1em 0.4em #004d00;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.4rem #004d00;
+          box-shadow: 0.1rem 0.1rem 0.4rem #004d00;
 }
 
 button {
   font-size: 16.18px;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  padding: .2em;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  width: 20%;
+  padding: .8rem;
   margin: 0 auto;
 }
 

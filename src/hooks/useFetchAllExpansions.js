@@ -1,5 +1,5 @@
 // this is a hook that takes a url and returns data
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 
 function useFetchAllExpansions() {
     // our url

@@ -1,3 +1,49 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,6 +51,15 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   max-width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 1.5;
 }
 
 .Neutral {
@@ -398,12 +453,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 30%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin-bottom: 2rem;
 }
 
 .loading-dot {
@@ -411,13 +471,11 @@
   height: 1em;
   background-color: black;
   border-radius: 100%;
-  position: absolute;
 }
 
 .loading-dot:nth-child(1) {
   -webkit-animation: loading 2500ms -600ms linear infinite;
           animation: loading 2500ms -600ms linear infinite;
-  left: -1.5em;
 }
 
 .loading-dot:nth-child(2) {
@@ -428,7 +486,6 @@
 .loading-dot:nth-child(3) {
   -webkit-animation: loading 2500ms linear infinite;
           animation: loading 2500ms linear infinite;
-  left: 1.5em;
 }
 
 #search-page, #expansion-list {
@@ -458,7 +515,7 @@
 }
 
 .expansion {
-  width: 95vw;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -472,6 +529,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  opacity: 0;
 }
 
 .expansion-header {
@@ -482,11 +540,9 @@
           transition-duration: 300ms;
   background-color: black;
   color: white;
-  border: solid 0.1em green;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  margin: .2em auto;
+  border: solid 0.1rem green;
+  width: 60%;
+  margin: .2rem auto;
   text-decoration: underline;
 }
 
@@ -504,7 +560,7 @@
 .class-list {
   padding: .2em;
   margin: .2em;
-  width: 95vw;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -546,10 +602,8 @@
           transition-duration: 300ms;
   background-color: black;
   color: white;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  border: solid 0.1em green;
+  width: 30%;
+  border: solid 0.1rem green;
 }
 
 .player-class-header:hover {
@@ -566,7 +620,7 @@
 .card-list, #search-list {
   padding: .2em;
   margin: .2em;
-  width: 90vw;
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -682,8 +736,8 @@ header a:focus, nav a:focus {
 }
 
 img {
-  width: 300px;
-  height: 400px;
+  width: 200px;
+  height: 290px;
   margin: 0 auto;
 }
 

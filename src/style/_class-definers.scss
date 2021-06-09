@@ -2,25 +2,25 @@
     @include font-size(2);
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: 30%;
+    height: min-content;
+    margin-bottom: 2rem;
 }
 .loading-dot {
     width: $loading-dot-size;
     height: $loading-dot-size;
     background-color: $primary-color;
     border-radius: 100%;
-    position: absolute;
     &:nth-child(1) {
         animation: loading 2500ms -600ms linear infinite;
-        left: -$loading-dot-size - .5em;
     }
     &:nth-child(2) {
         animation: loading 2500ms -300ms linear infinite;
     }
     &:nth-child(3) {
         animation: loading 2500ms linear infinite;
-        left: $loading-dot-size + .5em;;
     }
 }
 #search-page, #expansion-list {
@@ -37,24 +37,25 @@
     flex-direction: column;
 }
 .expansion {
-    width: 95vw;
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    opacity: 0;
 }
 .expansion-header {
     @include font-size(3);
     @include default-spacing();
     @include hover-outline($primary-color, $secondary-color);
-    border: solid .1em $tertiary-color-300;
-    width: min-content;
-    margin: .2em auto;
+    border: solid .1rem $tertiary-color-300;
+    width: 60%;
+    margin: .2rem auto;
     text-decoration: underline;
 }
 .class-list {
     @include default-spacing();
-    width: 95vw;
+    width: 95%;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -72,12 +73,12 @@
 .player-class-header {
     @include default-spacing();
     @include hover-outline($primary-color, $secondary-color);
-    width: min-content;
-    border: solid .1em $tertiary-color-300;
+    width: 30%;
+    border: solid .1rem $tertiary-color-300;
 }
 .card-list, #search-list {
     @include default-spacing();
-    width: 90vw;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;

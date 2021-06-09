@@ -8,14 +8,7 @@
 // 7. media queries
 
 // 1. default stats
-
-* {
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    box-sizing: border-box;
-    max-width: 100%;
-}
+@import "./reset";
 
 // 2. variables
 @import "./variables";

@@ -2,6 +2,7 @@ import React from 'react';
 import Expansion from "./Expansion";
 import useFetchAllExpansions from "../hooks/useFetchAllExpansions";
 import styled, { keyframes } from "styled-components"
+import {v4 as uuid} from "uuid";
 
 export default function ExpansionList() {
     const data = useFetchAllExpansions();
@@ -50,10 +51,11 @@ export default function ExpansionList() {
         <StyledMain>
             <h1>Hearthstone Cards</h1>
             {data ? <StyledList>
-                {data.map((expansion, index) => <Expansion 
-                                expansion={expansion} 
-                                sequence={index}
-                                key={index} />
+                {data.map((expansion, index) => 
+                <Expansion 
+                    expansion={expansion} 
+                    sequence={index}
+                    key={uuid()} />
                 )}
             </StyledList> : <StyledLoader>
                 <div></div>

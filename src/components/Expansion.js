@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import ClassCards from "./ClassCards";
 import styled, { keyframes } from "styled-components";
+import { v4 as uuid } from 'uuid';
 
-export default function Expansion({expansion, sequence}) {
+export default function Expansion(props) {
+    const {expansion, sequence} = props;
     const [classVisibility, setClassVisibility] = useState(false)
     const cardClasses = ["Neutral", "Rogue", "Warrior",
   "Hunter", "Mage", "Paladin", "Shaman",
@@ -15,12 +17,15 @@ export default function Expansion({expansion, sequence}) {
         100% {transform: rotateY(0deg)}
     `
     const StyledItem = styled.li`
-        animation: ${SpinAnimation} 1s linear forwards;
         h2 {
+            animation: ${SpinAnimation} 1s linear forwards;
             cursor: pointer;
             font-size: 2rem;
         }
         ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
     `
@@ -41,7 +46,7 @@ export default function Expansion({expansion, sequence}) {
                                 cards={expansion.cards} 
                                 classVisibility={classVisibility}
                                 sequence={index}
-                                key={index}
+                                key={uuid()}
                             />
                 })}
             </ul>

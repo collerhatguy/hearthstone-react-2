@@ -3,25 +3,25 @@ import Expansion from "./Expansion";
 import useFetchAllExpansions from "../hooks/useFetchAllExpansions";
 
 export default function ExpansionList() {
-    const [data, isDone] = useFetchAllExpansions();
+    const data = useFetchAllExpansions();
     return (
         <main id="expansion-list">
             <h1>Hearthstone Cards</h1>
-            <aside 
-                style={{ display: isDone ? "none" : "flex", }}
-                className="loader">
-                <div className="loading-dot"></div>
-                <div className="loading-dot"></div>
-                <div className="loading-dot"></div>
-            </aside>
+            {data ?  
             <ul>
-                {data.map((expansion, index) => {
-                    return <Expansion 
-                                expansion={expansion} 
-                                sequence={index}
-                                key={index} />
-                })}
-            </ul>
+                {data.map((expansion, index) => 
+                    <Expansion 
+                    expansion={expansion} 
+                    sequence={index}
+                    key={index} />
+                )}
+            </ul> 
+            :
+            <aside className="loader">
+                <div className="loading-dot"></div>
+                <div className="loading-dot"></div>
+                <div className="loading-dot"></div>
+            </aside>}
         </main>         
     )
 }

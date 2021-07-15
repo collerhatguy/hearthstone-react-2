@@ -489,7 +489,7 @@ body {
 }
 
 #search-page, #expansion-list {
-  margin-top: 55px;
+  margin-top: 80px;
 }
 
 #expansion-list, .expansion, .class-list, .player-class-header, .card {
@@ -608,7 +608,7 @@ body {
           transition-duration: 300ms;
   background-color: black;
   color: white;
-  width: 30%;
+  width: 50%;
   border: solid 0.1rem green;
 }
 

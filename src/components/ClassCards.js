@@ -1,13 +1,11 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState } from 'react'
 import Card from "./Card"
 
 export default function ClassCards({playerClass, cards, classVisibility, sequence}) {
     const [cardVisibility, setCardVisibility] = useState(false);
-    const classCards = useMemo(() => {
-        return cards.filter(card => {
+    const classCards = cards.filter(card => {
             return card.playerClass === playerClass;
         })
-    }, [cards])
     if (classCards.length === 0) return (<></>);
     
     return (

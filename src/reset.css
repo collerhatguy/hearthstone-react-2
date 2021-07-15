@@ -23,6 +23,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+body {
+	line-height: 1;
+}
 ol, ul {
 	list-style: none;
 }
@@ -39,16 +42,8 @@ table {
 	border-spacing: 0;
 }
 * {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    text-align: center;
-    box-sizing: border-box;
     max-width: 100%;
-}
-html {
-    font-size: 62.5%;
-}
-body {
-    font-size: 1.8rem;
-	line-height: 1.5;
 }

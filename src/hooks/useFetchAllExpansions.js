@@ -1,13 +1,10 @@
-// this is a hook that takes a url and returns data
+
 import { useState, useEffect } from "react";
 
 function useFetchAllExpansions() {
-    // our url
-    const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards"
-    // data varibale
-    const [data, setData] = useState([]);
-    // so we know when we are done loading
-    const [isDone, setIsDone] = useState(false);
+    const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards";
+    const [data, setData] = useState();
+
     const getData = async (url) => {
         try {
             const response = await fetch(url, {
@@ -17,19 +14,12 @@ function useFetchAllExpansions() {
                     "x-rapidapi-key": process.env.REACT_APP_API_KEY,
                 },
             });
-            // converting data into js object
             const json = await response.json();
-            // convert object into array
-            const array = await convertToArray(json);
-            // filter the array
-            const filteredArray = await filterByExpansion(array);
-            // again by card
-            const filteredTwiceArray = await filterByCard(filteredArray);
-            // set data varibale to converted response
+            const array = convertToArray(json);
+            const filteredArray = filterByExpansion(array);
+            const filteredTwiceArray = filterByCard(filteredArray);
             console.log(filteredTwiceArray);
             setData(filteredTwiceArray);
-            // set the isDone varibale to true after getting data
-            setIsDone(true)
         } catch (err) {
             console.log(err);   
         }
@@ -38,9 +28,9 @@ function useFetchAllExpansions() {
     useEffect(() => {
       getData(url)
     }, [])
-    return [data, isDone];
+    return data;
 }
-const convertToArray = (data) => {
+const convertToArray = data => {
     return Object.keys(data).map(expansionName => {
         return {
             name: expansionName,
@@ -48,7 +38,7 @@ const convertToArray = (data) => {
         }
     })
 }
-const filterByExpansion = (data) => {
+const filterByExpansion = data => {
     const expansionMinimum = 50;
     const invalidExpansions = [
         "Hero Skins",
@@ -63,7 +53,7 @@ const filterByExpansion = (data) => {
         return true
     })
 }
-const filterByCard = (data) => {
+const filterByCard = data => {
     const invalidCardTypes = ["Hero Power", "Hero", "Enchantment"];
     const invalidCardNames = ["FX", "Cost", "NOOOOOOOOOOOO", "AFK", "Coin's Vengeance", "Anomaly"];
 

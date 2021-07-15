@@ -1,7 +1,7 @@
 import React from 'react';
 import Expansion from "./Expansion";
 import useFetchAllExpansions from "../hooks/useFetchAllExpansions";
-import styled, {keyframes} from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 export default function ExpansionList() {
     const data = useFetchAllExpansions();
@@ -17,6 +17,11 @@ export default function ExpansionList() {
             font-weight: 900;
         }
     `
+    const LoadingAnimation = keyframes`
+        0% {opacity: 0}
+        50% {opacity: 1}
+        100% {opacity: 0}
+    `
     const StyledLoader = styled.div`
         width: min-content;
         margin: 1rem auto;
@@ -29,19 +34,11 @@ export default function ExpansionList() {
             border-radius: 100%;
             background-color: ${props => props.theme.primeColor};
             margin: 1rem;
-            animation: 
+            padding: 1rem;
+            animation: ${LoadingAnimation} 2s -600ms linear infinite;
         }
-    `
-    const LoadingAnimation = keyframes`
-        0% {
-            background-color: ${props => props.theme.primeColor};
-        }
-        50% {
-            background-color: ${props => props.theme.primeColor};
-        }
-        0% {
-            background-color: ${props => props.theme.primeColor};
-        }
+        div:nth-child(2) {animation-delay: -300ms;}
+        div:nth-child(3) {animation-delay: 0ms;}
     `
     const StyledList = styled.ul`
         display: grid;

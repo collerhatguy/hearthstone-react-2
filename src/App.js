@@ -33,9 +33,9 @@ function App() {
           <Link to="/search-card">
             Search Page
           </Link>
-          <Link to="/artist-list">
+          {/* <Link to="/artist-list">
             Artist Page
-          </Link>
+          </Link> */}
         </nav>
       </header>
       <Switch>

@@ -488,7 +488,7 @@ body {
           animation: loading 2500ms linear infinite;
 }
 
-#search-page, #expansion-list {
+.page {
   margin-top: 80px;
 }
 
@@ -579,6 +579,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+.artist-list {
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .class-cards {
@@ -677,6 +693,33 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.card-artist {
+  cursor: pointer;
+}
+
+.card-artist a {
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.card-artist a:hover {
+  color: black;
+  background-color: white;
+}
+
+.card-artist a:focus {
+  outline: none;
+  color: black;
+  background-color: white;
 }
 
 .card-artist, .card-flavor {
@@ -839,10 +882,7 @@ button {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #search-page, #expansion-list {
-    margin-top: 100px;
-  }
-  #search-page {
+  .page {
     margin-top: 130px;
   }
   label, input {

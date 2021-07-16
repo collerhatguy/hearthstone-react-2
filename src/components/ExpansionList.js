@@ -1,16 +1,15 @@
 import React from 'react';
 import Expansion from "./Expansion";
-import useFetchAllExpansions from "../hooks/useFetchAllExpansions";
 
-export default function ExpansionList() {
-    const data = useFetchAllExpansions();
+export default function ExpansionList({data, setArtist}) {
     return (
-        <main id="expansion-list">
+        <main id="expansion-list" className="page">
             <h1>Hearthstone Cards</h1>
             {data ?  
             <ul>
                 {data.map((expansion, index) => 
                     <Expansion 
+                    setArtist={setArtist}
                     expansion={expansion} 
                     sequence={index}
                     key={index} />

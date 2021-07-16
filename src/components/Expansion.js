@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import ClassCards from "./ClassCards";
 import { v4 as uuid } from "uuid";
 
-export default function Expansion({expansion, sequence}) {
+export default function Expansion({expansion, sequence, setArtist}) {
     const [classVisibility, setClassVisibility] = useState(false)
     
     const cardClasses = [
@@ -27,6 +27,7 @@ export default function Expansion({expansion, sequence}) {
                         cards={expansion.cards} 
                         classVisibility={classVisibility}
                         sequence={index}
+                        setArtist={setArtist}
                         key={uuid()}
                     />
                 )}

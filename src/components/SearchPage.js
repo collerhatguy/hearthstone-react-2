@@ -8,7 +8,7 @@ export default function SearchPage() {
     // our custom hook that returns our response
     const searchResponse = useFetchSearch(search);
     return (
-        <div id="search-page">
+        <div id="search-page" className="page">
             <form>
                 <label>Search For Cards:</label>
                 <input

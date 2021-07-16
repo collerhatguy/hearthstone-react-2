@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
+import {v4 as uuid} from "uuid";
 
 export default function ArtistPage({artist, data}) {
     const [pictures, setPictures] = useState([])
@@ -19,7 +20,7 @@ export default function ArtistPage({artist, data}) {
            <h2>All pictures by {artist}: </h2> 
            <ul className="artist-list">
                 {pictures?.map(pic => 
-                    <li>
+                    <li key={uuid()}>
                         <img src={pic} alt="pic" />
                     </li>
                 )}

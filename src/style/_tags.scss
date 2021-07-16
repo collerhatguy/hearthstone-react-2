@@ -10,24 +10,6 @@ h2 {
         @include font-size(2);
     }
 }
-header, nav {
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: $tertiary-color-200;
-    z-index: 1;
-    a {
-        @include font-size(2);
-        @include hover-outline($tertiary-color-200, $tertiary-color-600);
-        @include default-spacing();
-        color: $tertiary-color-600;
-        background-color: $tertiary-color-200;
-        text-decoration: none;
-    }
-}
 img {
     width: 200px;
     height: 290px;

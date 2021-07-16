@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ClassCards from "./ClassCards";
+import styled from 'styled-components';
 import { v4 as uuid } from "uuid";
 
 export default function Expansion({expansion, sequence, setArtist}) {
@@ -10,6 +11,7 @@ export default function Expansion({expansion, sequence, setArtist}) {
         "Hunter", "Mage", "Paladin", "Shaman",
         "Priest", "Druid", "Warlock", "Demon Hunter"
     ];
+    const StyleExpansion = styled.li``;
     return (
         <li className="expansion"
             style={{

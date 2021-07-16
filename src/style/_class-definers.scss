@@ -47,7 +47,6 @@
 .expansion-header {
     @include font-size(3);
     @include default-spacing();
-    @include hover-outline($primary-color, $secondary-color);
     border: solid .1rem $tertiary-color-300;
     min-width: min-content;
     width: 60%;
@@ -82,7 +81,6 @@
 }
 .player-class-header {
     @include default-spacing();
-    @include hover-outline($primary-color, $secondary-color);
     width: 50%;
     border: solid .1rem $tertiary-color-300;
 }
@@ -94,37 +92,7 @@
     align-items: center;
     flex-wrap: wrap;
 }
-.card {
-    @include default-spacing();
-    @include font-size(1);
-    border: solid .1rem $tertiary-color-300;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    opacity: 0;
-}
-.hidden {
-    display: none;
-}
-.card-name {
-    @include font-size(2);
-}
-.card-description, .card-image {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-.card-artist {
-    cursor: pointer;
-    a {
-        @include hover-outline($primary-color, $secondary-color);
-        padding: 1rem;
-        margin: 1rem;
-        border-radius: 1rem;
-        color: white;
-        text-decoration: none;
-    }
-}
+
 .card-artist, .card-flavor {
     width: 80%;
     font-weight: 900;

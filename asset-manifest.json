@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/hearthstone-react-2/static/css/main.d13d3f1f.chunk.css",
-    "main.js": "/hearthstone-react-2/static/js/main.3ce8b043.chunk.js",
-    "main.js.map": "/hearthstone-react-2/static/js/main.3ce8b043.chunk.js.map",
+    "main.css": "/hearthstone-react-2/static/css/main.438fe1c5.chunk.css",
+    "main.js": "/hearthstone-react-2/static/js/main.46afab23.chunk.js",
+    "main.js.map": "/hearthstone-react-2/static/js/main.46afab23.chunk.js.map",
     "runtime-main.js": "/hearthstone-react-2/static/js/runtime-main.8a046d7d.js",
     "runtime-main.js.map": "/hearthstone-react-2/static/js/runtime-main.8a046d7d.js.map",
-    "static/js/2.c9dfd942.chunk.js": "/hearthstone-react-2/static/js/2.c9dfd942.chunk.js",
-    "static/js/2.c9dfd942.chunk.js.map": "/hearthstone-react-2/static/js/2.c9dfd942.chunk.js.map",
+    "static/js/2.ade3c136.chunk.js": "/hearthstone-react-2/static/js/2.ade3c136.chunk.js",
+    "static/js/2.ade3c136.chunk.js.map": "/hearthstone-react-2/static/js/2.ade3c136.chunk.js.map",
     "index.html": "/hearthstone-react-2/index.html",
-    "static/css/main.d13d3f1f.chunk.css.map": "/hearthstone-react-2/static/css/main.d13d3f1f.chunk.css.map",
-    "static/js/2.c9dfd942.chunk.js.LICENSE.txt": "/hearthstone-react-2/static/js/2.c9dfd942.chunk.js.LICENSE.txt"
+    "static/css/main.438fe1c5.chunk.css.map": "/hearthstone-react-2/static/css/main.438fe1c5.chunk.css.map",
+    "static/js/2.ade3c136.chunk.js.LICENSE.txt": "/hearthstone-react-2/static/js/2.ade3c136.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8a046d7d.js",
-    "static/js/2.c9dfd942.chunk.js",
-    "static/css/main.d13d3f1f.chunk.css",
-    "static/js/main.3ce8b043.chunk.js"
+    "static/js/2.ade3c136.chunk.js",
+    "static/css/main.438fe1c5.chunk.css",
+    "static/js/main.46afab23.chunk.js"
   ]
 }

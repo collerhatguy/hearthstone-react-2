@@ -8,21 +8,41 @@ export default function Expansion({expansion, sequence, setArtist}) {
     
     const cardClasses = [
         "Neutral", "Rogue", "Warrior",
-        "Hunter", "Mage", "Paladin", "Shaman",
-        "Priest", "Druid", "Warlock", "Demon Hunter"
+        "Hunter", "Mage", "Paladin", 
+        "Shaman", "Priest", "Druid", 
+        "Warlock", "Demon Hunter"
     ];
-    const StyleExpansion = styled.li``;
+    const StyledExpansion = styled.li`
+        width: 95%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        animation-delay: ${sequence * 200}ms;
+        h2 {
+            ${({ theme }) => theme.hoverEffect(theme.secondColor, theme.primeColor)};
+            border: solid .1rem ${props => props.theme.primeColor};
+            min-width: min-content;
+            width: 60%;
+            margin: 1rem auto;
+            text-decoration: underline;
+        }
+        ul {
+            min-width: min-content;
+            width: 95%;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+    `;
     return (
-        <li className="expansion"
-            style={{
-                animationDelay: `${sequence * 200}ms`,
-            }}>
-            <h2 className="expansion-header"
-                tabIndex="0"
+        <StyledExpansion>
+            <h2 tabIndex="0"
                 onClick={() => setClassVisibility(!classVisibility)}>
                 {expansion.name}
             </h2>
-            <ul className="class-list">
+            <ul>
                 {cardClasses.map((playerClass, index) => 
                     <ClassCards 
                         playerClass={playerClass} 
@@ -34,6 +54,6 @@ export default function Expansion({expansion, sequence, setArtist}) {
                     />
                 )}
             </ul>
-        </li>
+        </StyledExpansion>
     )
 }

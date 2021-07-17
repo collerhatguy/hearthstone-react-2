@@ -26,13 +26,23 @@ function App() {
       align-items: center;
     }
     a {
-        ${({ theme }) => theme.hoverEffect(theme.primeColor, theme.secondColor)};
-        ${props => props.theme.spacing}
-        font-size: 2rem;
-        background-color: ${props => props.theme.primeColor};
-        color: ${props => props.theme.secondColor};
-        text-decoration: none;
+      ${({ theme }) => theme.hoverEffect(theme.primeColor, theme.secondColor)};
+      ${props => props.theme.spacing}
+      font-size: 2rem;
+      background-color: ${props => props.theme.primeColor};
+      color: ${props => props.theme.secondColor};
+      text-decoration: none;
     }
+  `
+  const StyledMain = styled.main`
+    color: ${props => props.theme.primeColor};
+    background-color: ${props => props.theme.secondColor};
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   `
   return (
     <ThemeProvider theme={theme}>
@@ -47,21 +57,23 @@ function App() {
             </Link>
           </nav>
         </StyledHeader>
-        <Switch>
-          <Route path="/" exact component={() => 
-            <ExpansionList 
-              data={data} 
-              setArtist={setArtist} 
-            />}
-          />
-          <Route path="/search-card" component={SearchPage}/>
-          <Route path="/artist-list" component={() => 
-            <ArtistPage 
-              artist={artist} 
-              data={data} 
-            />}
-          />
-        </Switch>
+        <StyledMain>
+          <Switch>
+            <Route path="/" exact component={() => 
+              <ExpansionList 
+                data={data} 
+                setArtist={setArtist} 
+              />}
+            />
+            <Route path="/search-card" component={SearchPage}/>
+            <Route path="/artist-list" component={() => 
+              <ArtistPage 
+                artist={artist} 
+                data={data} 
+              />}
+            />
+          </Switch>
+        </StyledMain>
       </Router>
     </ThemeProvider>
   );

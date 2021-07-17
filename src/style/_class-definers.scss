@@ -23,84 +23,11 @@
         animation: loading 2500ms linear infinite;
     }
 }
-.page {
-    margin-top: 80px;
-}
 #expansion-list, .expansion, .class-list, .player-class-header, .card {
     animation: reveal 300ms linear forwards;
 }
-#expansion-list, #search-list {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.expansion {
-    width: 95%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    opacity: 0;
-}
-.expansion-header {
-    @include font-size(3);
-    @include default-spacing();
-    border: solid .1rem $tertiary-color-300;
-    min-width: min-content;
-    width: 60%;
-    margin: .2rem auto;
-    text-decoration: underline;
-}
-.class-list {
-    @include default-spacing();
-    min-width: min-content;
-    width: 95%;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-.artist-list {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.class-cards  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
-    margin: 0 auto;
-}
-.player-class-header {
-    @include default-spacing();
-    width: 50%;
-    border: solid .1rem $tertiary-color-300;
-}
-.card-list, #search-list {
-    @include default-spacing();
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
 
-.card-artist, .card-flavor {
-    width: 80%;
-    font-weight: 900;
-    margin: 1rem auto;
-}
-.card-artist {
-    text-decoration: underline;
-}
+
 @media (max-width: 640px) {
     .player-class-header, .expansion, .expansion-header, .class-list {
         width: 95%;

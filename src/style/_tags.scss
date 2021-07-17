@@ -15,22 +15,6 @@ img {
     height: 290px;
     margin: 0 auto; 
 }
-label, input {
-    @include font-size(3);
-    @include default-spacing();
-}
-input, button {
-    @include default-spacing();
-    background-color: $tertiary-color-200;
-    color: $tertiary-color-600;
-    border: $tertiary-color-600 solid .1rem;
-    transition-duration: 500ms;
-    cursor: pointer;
-    &:focus,  &:hover {
-        outline: none;
-        box-shadow: .1rem .1rem .4rem $tertiary-color-200;
-    }
-}
 button {
     @include font-size(1);  
     min-width: min-content;

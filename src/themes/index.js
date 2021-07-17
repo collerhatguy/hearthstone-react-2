@@ -4,6 +4,7 @@ export const theme = {
     spacing: "padding: 1rem;",
     hoverEffect: (color1, color2) => {
         return `
+        cursor: pointer;
         transition-duration: 300ms;
         background-color: ${color1};
         color: ${color2};

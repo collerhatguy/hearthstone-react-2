@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 import CardImage from './CardImage';
+import Button from './Button';
 import styled from 'styled-components';
 
 export default function Card(props) {
@@ -30,13 +31,6 @@ export default function Card(props) {
             font-weight: 900;
             margin: 1rem auto;
         }
-        .btn { 
-            ${({ theme }) => theme.hoverEffect(theme.secondColor, theme.primeColor)};
-            padding: .5rem 1rem;
-            border: solid 1px ${props => props.theme.primeColor};
-            width: min-content;
-            margin: 1rem auto;
-        }
     `
     return cardVisibility ? (
         <StyledCard tabIndex="2"
@@ -46,12 +40,12 @@ export default function Card(props) {
             {descriptionVisibility ? 
                 <div className="card-description">
                     <CardImage imgGold={card.imgGold} img={card.img} />
-                    { card.artist ?
-                    <Link to="/artist-list" 
-                    className="btn"
-                    onClick={() => setArtist()}>
-                        {card.artist}
-                    </Link> : null }
+                    {card.artist ?
+                        <Link to="/artist-list">
+                            <Button 
+                            handleClick={() => setArtist(card.artist)} 
+                            text={card.artist} />
+                        </Link> : null }
                     <p className="card-flavor">
                         {card.flavor || "This card has no flavor text"}
                     </p>    

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
+import Button from './Button';
 
 export default function CardImage(props) {
     const { imgGold, img } = props;
@@ -12,23 +13,14 @@ export default function CardImage(props) {
         & > * {
             margin: 1rem;
         }
-        .btn { 
-            ${({ theme }) => theme.hoverEffect(theme.secondColor, theme.primeColor)};
-            padding: .5rem 1rem;
-            border: solid 1px ${props => props.theme.primeColor};
-            width: min-content;
-            margin: 1rem auto;
-        }
     `
     return (
         <StyledCard>
             <img src={gold ? imgGold : img} alt="card pic" />
-            <div className="btn"
-                onClick={e => {
-                    e.stopPropagation();
-                    setGold(!gold);
-                }}
-            >{gold ? "Gold" : "Normal"}</div>
+            <Button 
+            handleClick={() => setGold(!gold)}
+            text={gold ? "Gold" : "Normal"}
+            ></Button>
         </StyledCard>
     )
 }

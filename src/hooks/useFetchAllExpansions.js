@@ -61,6 +61,7 @@ const filterByCard = data => {
             cards: expansion.cards.filter((card, index) => {
                 if (invalidCardNames.includes(card.name)) return false;
                 if (invalidCardTypes.includes(card.type)) return false;
+                if (!card.flavor) return false;
                 if (expansion.cards[index + 1]) {
                     const nextCard = expansion.cards[index + 1]
                     if (nextCard.name === card.name) return false;
@@ -70,20 +71,5 @@ const filterByCard = data => {
         }
     })
 }
-// const addId = data => {
-//     const addedId = data.map(expansion => {
-//         return {
-//             ...expansion,
-//             cards: expansion.cards.map(card => {
-//                 return {
-//                     ...card, 
-//                     id: uuid() 
-//                 }
-//             })
-//         }
-        
-//     })
-//     return addedId;
-// }
 
 export default useFetchAllExpansions;

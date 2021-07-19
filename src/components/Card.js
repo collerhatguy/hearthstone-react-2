@@ -1,40 +1,55 @@
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
+import CardImage from './CardImage';
+import Button from './Button';
+import styled, {keyframes} from 'styled-components';
 
-export default function Card({card, cardVisibility, sequence}) {
+export default function Card(props) {
+    const {card, cardVisibility, sequence} = props;
     const [descriptionVisibility, setDescriptionVisibility] = useState(false);
-    const [gold, setGold] = useState(false)
+
+    const StyledCard = styled.li`
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 1rem;
+        margin: 1rem;
+        border: solid 1px ${props => props.theme.primeColor};
+        opacity: 0;
+        animation: ${props => props.theme.cardAnimation} 300ms linear ${sequence * 25}ms forwards;
+        h4 {
+            font-size: 3rem;
+        }
+        .card-description {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        p {
+            width: 80%;
+            font-weight: 900;
+            margin: 1rem auto;
+        }
+    `
     return cardVisibility ? (
-        <li tabIndex="2"
-            className={`card ${card.playerClass.replace(" ", "-")}`} 
-            style={{ animationDelay: `${sequence * 25}ms`}}
-        >
-            <h3 className="card-name">
-                {card.name}
-            </h3>
+        <StyledCard tabIndex="2"
+            onClick={() => setDescriptionVisibility(!descriptionVisibility)}
+            className={`${card.playerClass.replace(" ", "-")}`}>
+            <h4>{card.name}</h4>
             {descriptionVisibility ? 
                 <div className="card-description">
-                    <div className="card-image">
-                        <img src={gold ? card.imgGold : card.img} alt="card pic" />
-                        <button className="description-btn"
-                            onClick={() => setGold(!gold)}
-                        >{gold ? "Gold" : "Normal"}</button>
-                    </div>
-                        {card.artist ? <p className="card-artist">
+                    <CardImage imgGold={card.imgGold} img={card.img} />
+                    {card.artist ?
                         <Link to={`/artist-list/${card.artist}`}>
-                            {card.artist}
-                        </Link>
-                        </p> : null}
+                            <Button 
+                            handleClick={() => null} 
+                            text={card.artist} />
+                        </Link> : null }
                     <p className="card-flavor">
                         {card.flavor || "This card has no flavor text"}
                     </p>    
                 </div> : null}
-            <button className="description-btn"
-                onClick={() => setDescriptionVisibility(!descriptionVisibility)}
-            >
-               {descriptionVisibility ? "Hide" : "Reveal"}
-            </button>
-        </li>
+        </StyledCard>
     ) 
     :
     null;

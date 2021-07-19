@@ -1,9 +1,10 @@
 import React from 'react';
 import Expansion from "./Expansion";
+import Loader from "./Loader";
 
 export default function ExpansionList({ data }) {
     return (
-        <main id="expansion-list" className="page">
+        <>
             <h1>Hearthstone Cards</h1>
             {data ?  
             <ul>
@@ -15,11 +16,7 @@ export default function ExpansionList({ data }) {
                 )}
             </ul> 
             :
-            <aside className="loader">
-                <div className="loading-dot"></div>
-                <div className="loading-dot"></div>
-                <div className="loading-dot"></div>
-            </aside>}
-        </main>         
+            <Loader />}
+        </>         
     )
 }

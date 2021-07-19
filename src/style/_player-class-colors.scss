@@ -1,4 +1,5 @@
 @mixin hover-outline-cards($first-color, $second-color) {
+    cursor: pointer;
     transition-duration: 300ms;
     background-color: $first-color;
     color: $second-color;

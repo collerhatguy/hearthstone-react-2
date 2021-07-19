@@ -1,23 +1,30 @@
 import React, {useState} from 'react';
 import useFetchSearch from "../hooks/useFetchSearch";
-import SearchList from "../components/SearchList";
+import CardList from './CardList';
+import styled from "styled-components"
 
 export default function SearchPage() {
-    // our search query
+
     const [search, setSearch] = useState("");
-    // our custom hook that returns our response
     const searchResponse = useFetchSearch(search);
+    const StyledSearch = styled.form`
+        width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & > * {font-size: 4rem;}
+    `
     return (
-        <div id="search-page" className="page">
-            <form>
+        <>
+            <StyledSearch>
                 <label>Search For Cards:</label>
                 <input
                     type="text"
                     onChange={e => setSearch(e.target.value)}
                     placeholder="search"
-                    ></input>
-            </form>
-            <SearchList cards={searchResponse} />
-        </div>
+                    />
+            </StyledSearch>
+            <CardList cards={searchResponse} cardVisibility={true} />
+        </>
     )
 }

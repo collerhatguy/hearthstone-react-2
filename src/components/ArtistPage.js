@@ -1,5 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom";
+import {v4 as uuid} from "uuid";
+import styled from 'styled-components';
+
+import Button from './Button';
+import CardImage from './CardImage';
+import Loader from "./Loader";
+
 
 export default function ArtistPage(props) {
     const { data } = props;
@@ -9,22 +16,30 @@ export default function ArtistPage(props) {
     useEffect(() => {
         setPictures(data?.reduce((allPics, expansion) => {
             const artistCards = expansion.cards.filter(card => card.artist === artist)
-            return [...allPics, ...artistCards.map(card => card.img)];
+            return [...allPics, ...artistCards];
         }, []))
     }, [artist])
+    const StyledList = styled.ul`
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    `
     return (
         <div className="page">
-            <span
-            onClick={() => history.goBack()}
-            >Back</span>
+            <Button
+            handleClick={() => history.goBack()}
+            text={"Back"}
+            />
            <h2>All pictures by {artist}: </h2> 
-           <ul className="artist-list">
-                {pictures?.map(pic => 
-                    <li>
-                        <img src={pic} alt="pic" />
+           <StyledList>
+                {pictures ? pictures.map(pic => 
+                    <li key={uuid()}>
+                        <CardImage img={pic.img} imgGold={pic.imgGold} />
                     </li>
-                )}
-           </ul>
+                ) : <Loader />}
+           </StyledList>
         </div>
     )
 }

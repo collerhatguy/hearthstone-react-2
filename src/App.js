@@ -3,7 +3,7 @@ import SearchPage from "./components/SearchPage";
 import ArtistPage from "./components/ArtistPage";
 
 import React, { useState } from "react";
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 
 import useFetchAllExpansions from "./hooks/useFetchAllExpansions";
@@ -46,7 +46,6 @@ function App() {
   `
   return (
     <ThemeProvider theme={theme}>
-      <Router>
         <StyledHeader>
           <nav>
             <Link to="/">
@@ -74,7 +73,6 @@ function App() {
             />
           </Switch>
         </StyledMain>
-      </Router>
     </ThemeProvider>
   );
 }

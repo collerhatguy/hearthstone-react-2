@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Card from "./Card"
 import styled from "styled-components";
+import Button from './Button';
 
 export default function ClassCards({playerClass, cards, classVisibility, sequence, setArtist}) {
     const [cardVisibility, setCardVisibility] = useState(false);
@@ -17,9 +18,6 @@ export default function ClassCards({playerClass, cards, classVisibility, sequenc
         flex-direction: column;
         animation-delay: ${sequence * 1000}ms;
         h3 {
-            ${({ theme }) => theme.hoverEffect(theme.secondColor, theme.primeColor)};
-            width: 50%;
-            border: solid 1px ${props => props.theme.primeColor};
             font-size: 3rem;
         }
         ul {
@@ -33,9 +31,11 @@ export default function ClassCards({playerClass, cards, classVisibility, sequenc
     `
     return classCards.length === 0 ? null : classVisibility ? (
         <StyledClassList>
-            <h3 tabIndex="1"
-                onClick={() => setCardVisibility(!cardVisibility)}
-            >{playerClass}: <span>{classCards.length} Cards</span></h3>
+            <h3 tabIndex="1">
+                <Button 
+                handleClick={() => setCardVisibility(!cardVisibility)}
+                text={`${playerClass}: ${classCards.length} Cards`} />
+            </h3>
             <ul>
                 {classCards.map((card, index) => 
                     <Card 

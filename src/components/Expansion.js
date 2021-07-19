@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ClassCards from "./ClassCards";
 import styled from 'styled-components';
+import Button from './Button';
 import { v4 as uuid } from "uuid";
 
 export default function Expansion({expansion, sequence, setArtist}) {
@@ -20,12 +21,7 @@ export default function Expansion({expansion, sequence, setArtist}) {
         flex-direction: column;
         animation-delay: ${sequence * 200}ms;
         h2 {
-            ${({ theme }) => theme.hoverEffect(theme.secondColor, theme.primeColor)};
-            border: solid .1rem ${props => props.theme.primeColor};
-            min-width: min-content;
-            width: 60%;
-            margin: 1rem auto;
-            text-decoration: underline;
+            font-size: 4rem;
         }
         ul {
             min-width: min-content;
@@ -38,9 +34,10 @@ export default function Expansion({expansion, sequence, setArtist}) {
     `;
     return (
         <StyledExpansion>
-            <h2 tabIndex="0"
-                onClick={() => setClassVisibility(!classVisibility)}>
-                {expansion.name}
+            <h2 tabIndex="0">
+                <Button 
+                handleClick={() => setClassVisibility(!classVisibility)} 
+                text={expansion.name} />
             </h2>
             <ul>
                 {cardClasses.map((playerClass, index) => 

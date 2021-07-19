@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
-export default function ArtistPage({artist, data}) {
+export default function ArtistPage(props) {
+    const { data } = props;
+    const { artist } = useParams();
+    const history = useHistory();
     const [pictures, setPictures] = useState([])
     useEffect(() => {
         setPictures(data?.reduce((allPics, expansion) => {
@@ -11,11 +14,9 @@ export default function ArtistPage({artist, data}) {
     }, [artist])
     return (
         <div className="page">
-            {/* <select
-                onChange={e => setArtist(e.target.value)}>
-                {allArtists?.map(a => <option value={a}>{a}</option>)}
-            </select> */}
-            <Link to="">Back</Link>
+            <span
+            onClick={() => history.goBack()}
+            >Back</span>
            <h2>All pictures by {artist}: </h2> 
            <ul className="artist-list">
                 {pictures?.map(pic => 

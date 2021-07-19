@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 
-export default function Card({card, cardVisibility, sequence, setArtist}) {
+export default function Card({card, cardVisibility, sequence}) {
     const [descriptionVisibility, setDescriptionVisibility] = useState(false);
     const [gold, setGold] = useState(false)
     return cardVisibility ? (
@@ -20,9 +20,8 @@ export default function Card({card, cardVisibility, sequence, setArtist}) {
                             onClick={() => setGold(!gold)}
                         >{gold ? "Gold" : "Normal"}</button>
                     </div>
-                        {card.artist ? <p className="card-artist" 
-                        onClick={() => setArtist()}>
-                        <Link to="/artist-list">
+                        {card.artist ? <p className="card-artist">
+                        <Link to={`/artist-list/${card.artist}`}>
                             {card.artist}
                         </Link>
                         </p> : null}

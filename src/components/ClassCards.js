@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Card from "./Card"
 
-export default function ClassCards({playerClass, cards, classVisibility, sequence, setArtist}) {
+export default function ClassCards({playerClass, cards, classVisibility, sequence}) {
     const [cardVisibility, setCardVisibility] = useState(false);
 
     const classCards = cards.filter(card => card.playerClass === playerClass);
@@ -20,7 +20,6 @@ export default function ClassCards({playerClass, cards, classVisibility, sequenc
                         card={card} 
                         cardVisibility={cardVisibility} 
                         sequence={index}
-                        setArtist={() => setArtist(card.artist)}
                         key={card.cardId} 
                     />
                 )}

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Button from './Button';
 import { v4 as uuid } from "uuid";
 
-export default function Expansion({expansion, sequence, setArtist}) {
+export default function Expansion({expansion, sequence}) {
     const [classVisibility, setClassVisibility] = useState(false)
     
     const cardClasses = [
@@ -46,7 +46,6 @@ export default function Expansion({expansion, sequence, setArtist}) {
                         cards={expansion.cards} 
                         classVisibility={classVisibility}
                         sequence={index}
-                        setArtist={setArtist}
                         key={uuid()}
                     />
                 )}

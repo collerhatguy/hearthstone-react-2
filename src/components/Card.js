@@ -43,7 +43,7 @@ export default function Card(props) {
                     {card.artist ?
                         <Link to="/artist-list">
                             <Button 
-                            handleClick={() => setArtist(card.artist)} 
+                            handleClick={() => null} 
                             text={card.artist} />
                         </Link> : null }
                     <p className="card-flavor">

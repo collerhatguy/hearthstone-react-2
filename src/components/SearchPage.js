@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import useFetchSearch from "../hooks/useFetchSearch";
-import SearchList from "../components/SearchList";
+import CardList from './CardList';
 
 export default function SearchPage() {
-    // our search query
+
     const [search, setSearch] = useState("");
-    // our custom hook that returns our response
     const searchResponse = useFetchSearch(search);
     return (
         <div id="search-page" className="page">
@@ -17,7 +16,7 @@ export default function SearchPage() {
                     placeholder="search"
                     ></input>
             </form>
-            <SearchList cards={searchResponse} />
+            <CardList cards={searchResponse} cardVisibility={true} />
         </div>
     )
 }

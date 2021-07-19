@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 import CardImage from './CardImage';
 import Button from './Button';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 
 export default function Card(props) {
     const {card, cardVisibility, sequence} = props;
@@ -16,7 +16,7 @@ export default function Card(props) {
         margin: 1rem;
         border: solid 1px ${props => props.theme.primeColor};
         opacity: 0;
-        animation: ${props => props.theme.cardAnimation} 300ms linear ${sequence * 25}ms forwards;
+        animation: ${props => props.theme.cardAnimation} 300ms linear forwards;
         h4 {
             font-size: 3rem;
         }

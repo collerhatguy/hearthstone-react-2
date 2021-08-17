@@ -11,39 +11,40 @@ import useFetchAllExpansions from "./hooks/useFetchAllExpansions";
 import "./style/style.css";
 import { theme } from "./themes";
 
+const StyledHeader = styled.header`
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: ${props => props.theme.primeColor};
+  z-index: 1;
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  a {
+    ${({ theme }) => theme.hoverEffect(theme.primeColor, theme.secondColor)};
+    ${props => props.theme.spacing}
+    font-size: 2rem;
+    background-color: ${props => props.theme.primeColor};
+    color: ${props => props.theme.secondColor};
+    text-decoration: none;
+  }
+`
+const StyledMain = styled.main`
+  color: ${props => props.theme.primeColor};
+  background-color: ${props => props.theme.secondColor};
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h1 {font-size: 6rem;}
+`
+
 function App() {
   const data = useFetchAllExpansions();
-  const StyledHeader = styled.header`
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    background-color: ${props => props.theme.primeColor};
-    z-index: 1;
-    nav {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-    }
-    a {
-      ${({ theme }) => theme.hoverEffect(theme.primeColor, theme.secondColor)};
-      ${props => props.theme.spacing}
-      font-size: 2rem;
-      background-color: ${props => props.theme.primeColor};
-      color: ${props => props.theme.secondColor};
-      text-decoration: none;
-    }
-  `
-  const StyledMain = styled.main`
-    color: ${props => props.theme.primeColor};
-    background-color: ${props => props.theme.secondColor};
-    margin-top: 80px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    h1 {font-size: 6rem;}
-  `
   return (
     <ThemeProvider theme={theme}>
         <StyledHeader>

@@ -7,6 +7,13 @@ import Button from './Button';
 import CardImage from './CardImage';
 import Loader from "./Loader";
 
+const StyledList = styled.ul`
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+`
 
 export default function ArtistPage(props) {
     const { data } = props;
@@ -18,14 +25,7 @@ export default function ArtistPage(props) {
             const artistCards = expansion.cards.filter(card => card.artist === artist)
             return [...allPics, ...artistCards];
         }, []))
-    }, [artist])
-    const StyledList = styled.ul`
-        width: 100%;
-        padding: 1rem;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    `
+    }, [artist, data])
     return (
         <div className="page">
             <Button

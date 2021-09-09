@@ -1,4 +1,5 @@
-import {useState, useEffect} from "react";
+import { useState } from "react";
+import useDebounce from "./useDebounce";
 
 function useFetchSearch(search) {
     const [searchResponse, setSearchResponse] = useState([])
@@ -25,9 +26,9 @@ function useFetchSearch(search) {
             console.log(error)
         }
     }
-    useEffect(() => {
+    useDebounce(() => {
         getSearch(search)
-    }, [search])
+    }, 1000, [search])
     return searchResponse;
 }
 export default useFetchSearch;

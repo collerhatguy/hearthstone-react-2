@@ -10,7 +10,8 @@ const StyledCardList = styled.ul`
     align-items: center;
     flex-wrap: wrap;
 `
-export default function CardList({ cards, cardVisibility }) {
+export default function CardList(props) {
+    const { cards, cardVisibility } = props
     return (
         <StyledCardList>
             {cards.map((card, index) => 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 import CardList from './CardList';
+import useToggle from '../hooks/useToggle';
 
 const StyledClassList = styled.li`
     width: 100%;
@@ -18,19 +19,18 @@ const StyledClassList = styled.li`
 `
 
 export default function ClassCards(props) {
-    const { playerClass, cards, classVisibility } = props;
-    const [cardVisibility, setCardVisibility] = useState(false);
+    const { playerClass, cards } = props;
+    const [cardVisibility, toggleCardVisibility] = useToggle(false);
 
-    const classCards = cards.filter(card => card.playerClass === playerClass);
-
-    return classCards.length === 0 || !classVisibility ? null : (
+    return cards.length && (
         <StyledClassList>
             <h3 tabIndex="1" 
-            onClick={() => setCardVisibility(!cardVisibility)}
-            className={`${playerClass.replace(" ", "-")}`}>
-                {`${playerClass}: ${classCards.length} Cards`}
+                onClick={toggleCardVisibility}
+                className={playerClass.replace(" ", "-")}
+            >
+                {playerClass}: {cards.length} Cards
             </h3>
-            <CardList cards={classCards} cardVisibility={cardVisibility}/>
+            {cardVisibility && <CardList cards={cards}/>}
         </StyledClassList>
     )
 } 

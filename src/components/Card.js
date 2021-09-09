@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
-import { Link } from "react-router-dom";
-import CardImage from './CardImage';
-import Button from './Button';
-import styled from 'styled-components';
+import React, { useState } from 'react'
+import useToggle from "../hooks/useToggle"
+import { useHistory } from "react-router-dom"
+import CardImage from './CardImage'
+import Button from './Button'
+import styled from 'styled-components'
 
 const StyledCard = styled.li`
     display: flex;
@@ -29,25 +30,22 @@ const StyledCard = styled.li`
 `
 
 export default function Card(props) {
-    const {card, cardVisibility } = props;
-    const [descriptionVisibility, setDescriptionVisibility] = useState(false);
-
-    return cardVisibility && (
+    const { card } = props
+    const { artist, playerClass, name, img, imgGold, flavor } = card
+    const [descriptionVisibility, toggleDescriptionVisibility] = useToggle(false)
+    const { push } = useHistory()
+    const handleClick = () => push(`/artist-list/${artist}`)
+    return (
         <StyledCard tabIndex="2"
-            onClick={() => setDescriptionVisibility(!descriptionVisibility)}
-            className={`${card.playerClass.replace(" ", "-")}`}>
-            <h4>{card.name}</h4>
+            onClick={toggleDescriptionVisibility}
+            className={playerClass.replace(" ", "-")}>
+            <h4>{name}</h4>
             {descriptionVisibility && 
                 <div className="card-description">
-                    <CardImage imgGold={card.imgGold} img={card.img} />
-                    {card.artist &&
-                        <Link to={`/artist-list/${card.artist}`}>
-                            <Button 
-                            handleClick={() => null} 
-                            text={card.artist} />
-                        </Link>}
+                    <CardImage imgGold={imgGold} img={img}/>
+                    {artist && <Button handleClick={handleClick} text={artist}/>}
                     <p className="card-flavor">
-                        {card.flavor || "This card has no flavor text"}
+                        {flavor || "This card has no flavor text"}
                     </p>    
                 </div>}
         </StyledCard>

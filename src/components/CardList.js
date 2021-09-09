@@ -11,15 +11,15 @@ const StyledCardList = styled.ul`
     flex-wrap: wrap;
 `
 export default function CardList(props) {
-    const { cards, cardVisibility } = props
+    const { cards } = props
     return (
         <StyledCardList>
             {cards.map((card, index) => 
                 <Card
-                card={card} 
-                cardVisibility={cardVisibility} 
-                sequence={index}
-                key={card.cardId}  />
+                    card={card} 
+                    sequence={index}
+                    key={card.cardId}  
+                />
             )}
         </StyledCardList>
     )

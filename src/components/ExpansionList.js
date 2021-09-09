@@ -6,17 +6,20 @@ export default function ExpansionList({ data }) {
     return (
         <>
             <h1>Hearthstone Cards</h1>
-            {data ?  
-            <ul>
-                {data.map((expansion, index) => 
-                    <Expansion
-                    expansion={expansion} 
-                    sequence={index}
-                    key={index} />
-                )}
-            </ul> 
-            :
-            <Loader />}
+            {
+                data ?  
+                    <ul>
+                        {data.map((expansion, index) => 
+                            <Expansion
+                                expansion={expansion} 
+                                sequence={index}
+                                key={index} 
+                            />
+                        )}
+                    </ul> 
+                    :
+                    <Loader/>
+            }
         </>         
     )
 }

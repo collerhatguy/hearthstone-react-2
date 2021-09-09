@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import styled from 'styled-components';
-import Button from './Button';
+import styled from 'styled-components'
+import Button from './Button'
+import useToggle from '../hooks/useToggle'
 
 const StyledCard = styled.div`
     width: 100%;
@@ -17,14 +18,17 @@ const StyledCard = styled.div`
 
 export default function CardImage(props) {
     const { imgGold, img } = props;
-    const [gold, setGold] = useState(false);
+    const [gold, toggleGold] = useToggle(false);
     return (
         <StyledCard>
-            <img src={gold ? imgGold : img} alt="No card here" />
-            {imgGold && <Button 
-            handleClick={() => setGold(!gold)}
-            text={gold ? "Gold" : "Normal"}
-            ></Button>}
+            <img src={gold ? imgGold : img} alt="No card here"/>
+            {
+                imgGold && 
+                    <Button 
+                        handleClick={toggleGold}
+                        text={gold ? "Gold" : "Normal"}
+                    />
+            }
             
         </StyledCard>
     )

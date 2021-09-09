@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 
 export default function Button(props) {
-    const { text, handleClick } = props;
+    const { text, handleClick = null } = props;
     const StyledButton = styled.button`
         ${({ theme }) => theme.hoverEffect(theme.secondColor, theme.primeColor)};
         font-size: inherit;

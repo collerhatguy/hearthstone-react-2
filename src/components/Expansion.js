@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
-import ClassCards from "./ClassCards";
-import styled from 'styled-components';
-import Button from './Button';
-import { v4 as uuid } from "uuid";
+import React, { useState } from 'react'
+import ClassCards from "./ClassCards"
+import styled from 'styled-components'
+import Button from './Button'
+import { v4 as uuid } from "uuid"
+import useToggle from '../hooks/useToggle'
 
 const StyledExpansion = styled.li`
     width: 95%;
@@ -25,7 +26,7 @@ const StyledExpansion = styled.li`
 `;
 
 export default function Expansion({ expansion }) {
-    const [classVisibility, setClassVisibility] = useState(false)
+    const [classVisibility, toggleClassVisibility] = useToggle(false)
     
     const cardClasses = [
         "Neutral", "Rogue", "Warrior",
@@ -37,15 +38,14 @@ export default function Expansion({ expansion }) {
         <StyledExpansion>
             <h2 tabIndex="0" >
                 <Button 
-                handleClick={() => setClassVisibility(!classVisibility)} 
+                handleClick={toggleClassVisibility} 
                 text={expansion.name} />
             </h2>
             <ul>
-                {cardClasses.map(playerClass => 
+                {classVisibility && cardClasses.map(playerClass => 
                     <ClassCards 
                         playerClass={playerClass} 
-                        cards={expansion.cards} 
-                        classVisibility={classVisibility}
+                        cards={expansion.cards.filter(card => card.playerClass === playerClass)} 
                         key={uuid()}
                     />
                 )}

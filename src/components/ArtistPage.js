@@ -18,8 +18,8 @@ const StyledList = styled.ul`
 export default function ArtistPage(props) {
     const { data } = props;
     const { artist } = useParams();
-    const history = useHistory();
-    const [pictures, setPictures] = useState([])
+    const { goBack } = useHistory();
+    const [pictures, setPictures] = useState()
     useEffect(() => {
         setPictures(data?.reduce((allPics, expansion) => {
             const artistCards = expansion.cards.filter(card => card.artist === artist)
@@ -29,14 +29,14 @@ export default function ArtistPage(props) {
     return (
         <div className="page">
             <Button
-            handleClick={() => history.goBack()}
-            text={"Back"}
+                handleClick={goBack}
+                text={"Back"}
             />
            <h2>All pictures by {artist}: </h2> 
            <StyledList>
-                {pictures ? pictures.map(pic => 
+                {pictures ? pictures.map(({ img, imgGold }) => 
                     <li key={uuid()}>
-                        <CardImage img={pic.img} imgGold={pic.imgGold} />
+                        <CardImage img={img} imgGold={imgGold} />
                     </li>
                 ) : <Loader />}
            </StyledList>

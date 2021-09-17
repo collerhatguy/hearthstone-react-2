@@ -1,20 +1,13 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
+import callApi from "../services"
 
 function useFetchAllExpansions() {
-    const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards"
     const [data, setData] = useState();
-    const getData = async (url) => {
+    const getData = async () => {
         try {
-            const response = await fetch(url, {
-                method: "GET",
-                headers: {
-                    "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
-                    "x-rapidapi-key": process.env.REACT_APP_API_KEY,
-                },
-            });
-            const json = await response.json();
-            const array = convertToArray(json);
+            const response = await callApi().get()
+            const array = convertToArray(response.data);
             const filteredArray = filterByExpansion(array);
             const filteredTwiceArray = filterByCard(filteredArray);
             setData(filteredTwiceArray);
@@ -23,7 +16,7 @@ function useFetchAllExpansions() {
         }
     }
     useEffect(() => {
-      getData(url)
+      getData()
     }, [])
 
     return data;

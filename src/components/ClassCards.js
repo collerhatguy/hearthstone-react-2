@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from "styled-components";
 import CardList from './CardList';
-import useToggle from '../hooks/useToggle';
+import { useToggle } from 'use-toggle-coolhatguy';
 
 const StyledClassList = styled.li`
     width: 100%;

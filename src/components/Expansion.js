@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ClassCards from "./ClassCards"
 import styled from 'styled-components'
 import Button from './Button'
 import { v4 as uuid } from "uuid"
-import useToggle from '../hooks/useToggle'
+import { useToggle } from 'use-toggle-coolhatguy'
 
 const StyledExpansion = styled.li`
     width: 95%;

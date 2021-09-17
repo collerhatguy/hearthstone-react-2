@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import useToggle from "../hooks/useToggle"
+import React from 'react'
+import { useToggle } from "use-toggle-coolhatguy"
 import { useHistory } from "react-router-dom"
 import CardImage from './CardImage'
 import Button from './Button'

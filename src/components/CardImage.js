@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Button from './Button'
-import useToggle from '../hooks/useToggle'
+import { useToggle } from 'use-toggle-coolhatguy'
 
 const StyledCard = styled.div`
     width: 100%;

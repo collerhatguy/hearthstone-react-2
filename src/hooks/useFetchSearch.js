@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useDebounce from "./useDebounce";
+import { useDebounce } from "use-debounce-coolhatguy";
 
 function useFetchSearch(search) {
     const [searchResponse, setSearchResponse] = useState([])

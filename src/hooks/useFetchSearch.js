@@ -6,13 +6,13 @@ function useFetchSearch(search) {
     const [searchResponse, setSearchResponse] = useState([])
     const getSearch = async (search) => {
         try {
-            if (search.length === 0) return;
+            if (search.length === 0) return
             const { data } = await callApi().get(`/search/${search}`)
-            if (!data) return searchResponse;
+            if (!data) return searchResponse
             if (data.length > 9) {
-                return setSearchResponse(data.slice(0, 10));
+                return setSearchResponse(data.slice(0, 10))
             }
-            setSearchResponse(data);
+            setSearchResponse(data)
         } catch(error) {
             console.log(error)
         }
@@ -20,6 +20,6 @@ function useFetchSearch(search) {
     useDebounce(() => {
         getSearch(search)
     }, 1000, [search])
-    return searchResponse;
+    return searchResponse
 }
-export default useFetchSearch;
+export default useFetchSearch

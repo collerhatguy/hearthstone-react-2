@@ -45,7 +45,9 @@ export default function Expansion({ expansion }) {
                 {classVisibility && cardClasses.map(playerClass => 
                     <ClassCards 
                         playerClass={playerClass} 
-                        cards={expansion.cards.filter(card => card.playerClass === playerClass)} 
+                        cards={expansion.cards.filter(card => 
+                            card.playerClass === playerClass
+                        )} 
                         key={uuid()}
                     />
                 )}

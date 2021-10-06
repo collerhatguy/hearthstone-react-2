@@ -60,11 +60,11 @@ function App() {
         <StyledMain>
           <Switch>
             <Route path="/" exact>
-              <ExpansionList data={data} />
+              <ExpansionList data={data}/>
             </Route>
             <Route path="/search-card" component={SearchPage}/>
             <Route path="/artist-list/:artist">
-              <ArtistPage data={data} />
+              <ArtistPage data={data}/>
             </Route>
           </Switch>
         </StyledMain>

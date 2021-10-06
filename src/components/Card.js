@@ -36,18 +36,31 @@ export default function Card(props) {
     const { push } = useHistory()
     const handleClick = () => push(`/artist-list/${artist}`)
     return (
-        <StyledCard tabIndex="2"
+        <StyledCard 
+            tabIndex="2"
             onClick={toggleDescriptionVisibility}
             className={playerClass.replace(" ", "-")}>
-            <h4>{name}</h4>
-            {descriptionVisibility && 
-                <div className="card-description">
-                    <CardImage imgGold={imgGold} img={img}/>
-                    {artist && <Button handleClick={handleClick} text={artist}/>}
-                    <p className="card-flavor">
-                        {flavor || "This card has no flavor text"}
-                    </p>    
-                </div>}
+            <h4>
+                {name}
+            </h4>
+            {
+                descriptionVisibility && 
+                    <div className="card-description">
+                        <CardImage 
+                            imgGold={imgGold} 
+                            img={img}
+                        />
+                        {
+                            artist && <Button 
+                                handleClick={handleClick} 
+                                text={artist}
+                            />
+                        }
+                        <p className="card-flavor">
+                            {flavor || "This card has no flavor text"}
+                        </p>    
+                    </div>
+            }
         </StyledCard>
     )
 }

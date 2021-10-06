@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from "styled-components";
-import CardList from './CardList';
-import { useToggle } from 'use-toggle-coolhatguy';
+import React from 'react'
+import styled from "styled-components"
+import CardList from './CardList'
+import { useToggle } from 'use-toggle-coolhatguy'
 
 const StyledClassList = styled.li`
     width: 100%;
@@ -19,12 +19,14 @@ const StyledClassList = styled.li`
 `
 
 export default function ClassCards(props) {
-    const { playerClass, cards } = props;
-    const [cardVisibility, toggleCardVisibility] = useToggle(false);
-
-    return cards.length && (
+    const { playerClass, cards } = props
+    const [cardVisibility, toggleCardVisibility] = useToggle(false)
+    
+    if (!cards.length) return null
+    return (
         <StyledClassList>
-            <h3 tabIndex="1" 
+            <h3 
+                tabIndex="1" 
                 onClick={toggleCardVisibility}
                 className={playerClass.replace(" ", "-")}
             >
